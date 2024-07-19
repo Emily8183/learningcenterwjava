@@ -22,18 +22,8 @@ public class DiaryController {
         this.diaryService = diaryService;
     }
 
-//    @GetMapping
-//    public List<Diary> getAllDiaries1() {
-//        return diaryRepository.findAll();
-//    }
-
-    @PostMapping(path = "/add")
-//    public Diary createDiary(@RequestBody Diary diary) {
-//    return diaryRepository.save(diary);
-//    }
-
     @GetMapping(path = "/all")
-    public @ResponseBody Iterable<Diary> getAllDiaries() {
-        return DiaryService.findAll();
+    public List<Diary> getAllDiaries() {
+        return diaryService.getAllDiaries();
     }
 }
