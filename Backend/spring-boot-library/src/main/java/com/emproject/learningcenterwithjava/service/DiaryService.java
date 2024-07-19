@@ -1,10 +1,11 @@
 package com.emproject.learningcenterwithjava.service;
 
 import com.emproject.learningcenterwithjava.dao.DiaryRepository;
+import com.emproject.learningcenterwithjava.entity.Diary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Scanner;
+import java.util.List;
 
 @Service
 public class DiaryService {
@@ -14,6 +15,8 @@ public class DiaryService {
     public DiaryService(DiaryRepository diaryRepository) {
         this.diaryRepository = diaryRepository;
     }
-//    List<Diary> diaries = diaryRepository.findAll();
+    public List<Diary> getAllDiaries() {
+        return diaryRepository.findAll();
+    }
 
 }
