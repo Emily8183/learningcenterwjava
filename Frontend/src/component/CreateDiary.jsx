@@ -51,3 +51,5 @@ function CreateDiary({ onAddDiary }) {
     </div>
   );
 }
+
+export default CreateDiary;
