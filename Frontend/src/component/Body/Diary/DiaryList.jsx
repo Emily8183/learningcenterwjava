@@ -50,3 +50,5 @@ function DiaryList() {
     </div>
   );
 }
+
+export default DiaryList;
