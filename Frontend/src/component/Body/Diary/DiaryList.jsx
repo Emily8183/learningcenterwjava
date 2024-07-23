@@ -7,23 +7,38 @@ function DiaryList() {
   const [diaries, setDiaries] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/api/diaries")
-      .then((res) => setDiaries(res.data))
-      .catch((err) => console.log(err));
+    fetchDiaries();
   }, []);
+
+  const fetchDiaries = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/diaries");
+      setDiaries(response.data);
+    } catch (error) {
+      console.error("Sth wrong while fetching data", error);
+    }
+  };
 
   const handleAdd = (newDiary) => {
     setDiaries([...diaries, newDiary]);
   };
-  const handleDelete = (id) => {
-    setDiaries(diaries.filter((diary) => diary.id !== id));
+  const handleDelete = (diary_id) => {
+    setDiaries(diaries.filter((diary) => diary.diary_id !== diary_id));
   };
 
   const handleEdit = (diary_id, updatedDiary) => {
-    setDiaries(
-      diaries.map((diary) => (diary.id === id ? updatedDiary : diary))
-    );
+    console.log("updated diary", updatedDiary);
+
+    axios
+      .patch(`/api/diaries/${diary_id}`, updatedDiary)
+      .then((response) => {
+        setDiaries((prevDiaries) =>
+          prevDiaries.map((diary) =>
+            diary.diary_id === updatedDiary.diary_id ? response.data : diary
+          )
+        );
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -36,7 +51,7 @@ function DiaryList() {
           {diaries.map((diary) => (
             <li key={diary.diary_id}>
               <DiaryItem
-                id={diary.id}
+                id={diary.diary_id}
                 onDelete={() => handleDelete(diary.diary_id)}
                 onEdit={(updatedDiary) =>
                   handleEdit(diary.diary_id, updatedDiary)
@@ -44,7 +59,6 @@ function DiaryList() {
               />
             </li>
           ))}
-          ;
         </ul>
       </div>
     </div>

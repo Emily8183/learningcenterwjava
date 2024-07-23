@@ -16,8 +16,10 @@ function DiaryItem({ id, onEdit, onDelete }) {
   useEffect(() => {
     const fetchDiary = async () => {
       try {
-        const response = await axios.get(`/api/diaries/${id}`);
-        setDiary(response.data);
+        const response = await axios.get(
+          `http://localhost:8080/api/diaries/${diary_id}`
+        );
+        setInitialDiary(response.data);
         setEditedDiary(response.data);
       } catch (error) {
         console.log(error);

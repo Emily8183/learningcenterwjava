@@ -18,7 +18,7 @@ function CreateDiary({ onAddDiary }) {
     e.preventDefault();
 
     axios
-      .post("/api/diaries", newDiary)
+      .post("http://localhost:8080/api/diaries", newDiary)
       .then((res) => {
         onAddDiary(res.data);
         setNewDiary({
