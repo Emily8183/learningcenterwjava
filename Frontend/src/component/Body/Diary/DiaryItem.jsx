@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function DiaryItem({ id, onEdit, onDelete }) {
+function DiaryItem({ diary_id, onEdit, onDelete }) {
+  console.log("DiaryItem", diary_id);
+
   const [initialDiary, setInitialDiary] = useState({
     title: "",
     content: "",
@@ -22,12 +24,12 @@ function DiaryItem({ id, onEdit, onDelete }) {
         setInitialDiary(response.data);
         setEditedDiary(response.data);
       } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
       }
     };
 
     fetchDiary();
-  }, [id]);
+  }, [diary_id]);
 
   const handleEdit = (e) => {
     const { name, value } = e.target;
