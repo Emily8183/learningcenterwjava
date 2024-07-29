@@ -9,7 +9,8 @@ import java.util.List;
 
 @Service
 public class DiaryService {
-    private DiaryRepository diaryRepository;
+    private final DiaryRepository diaryRepository;
+//    什么时候需要加final
 
     @Autowired
     public DiaryService(DiaryRepository diaryRepository) {
