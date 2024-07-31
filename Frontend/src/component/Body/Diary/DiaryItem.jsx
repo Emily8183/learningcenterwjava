@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function DiaryItem({ diary_id, onEdit, onDelete }) {
-  console.log("DiaryItem", diary_id);
-
   const [initialDiary, setInitialDiary] = useState({
     title: "",
     content: "",
   });
 
   const [isEditing, setIsEditing] = useState(false);
+
   const [editedDiary, setEditedDiary] = useState({
     title: "",
     content: "",
@@ -31,7 +30,16 @@ function DiaryItem({ diary_id, onEdit, onDelete }) {
     fetchDiary();
   }, [diary_id]);
 
-  const handleEdit = (e) => {
+  const startEditing = (diary_id) => {
+    setIsEditing(true);
+    setEditingDiaryId(diary_id);
+  };
+
+  // const stopEditing = () => {
+  //   setEditingDiaryId(null);
+  // };
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setEditedDiary({
       ...editedDiary,
@@ -39,10 +47,11 @@ function DiaryItem({ diary_id, onEdit, onDelete }) {
     });
   };
 
-  const handleSave = (e) => {
+  const handlePatch = (e) => {
     e.preventDefault();
 
-    onEdit(diary_id, editedDiary);
+    // onEdit(diary_id, editedDiary);
+    setEditedDiary(diary_id);
     setIsEditing(false);
   };
 
@@ -54,30 +63,33 @@ function DiaryItem({ diary_id, onEdit, onDelete }) {
   };
 
   return (
-    <div className="diary-item">
+    <div>
       {isEditing ? (
-        <form onSubmit={handleSave}>
+        <form>
           <input
             type="text"
             name="title"
             value={editedDiary.title}
-            onChange={handleEdit}
+            onChange={handleChange}
           />
-          <textarea
+          <input
+            type="text"
             name="content"
             value={editedDiary.content}
-            onChange={handleEdit}
+            onChange={handleChange}
           />
-          <button type="submit">Save</button>
+          <button type="submit" onClick={handlePatch}>
+            Save
+          </button>
           <button type="button" onClick={handleCancel}>
             Cancel
           </button>
         </form>
       ) : (
         <>
-          <strong>{editedDiary.title}</strong>
-          <p>{editedDiary.content}</p>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
+          <strong>{initialDiary.title}</strong>
+          <p>{initialDiary.content}</p>
+          <button onClick={startEditing}>Edit</button>
           <button onClick={onDelete}>Delete</button>
         </>
       )}

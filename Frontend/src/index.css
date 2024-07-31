@@ -89,7 +89,7 @@ form textarea {
   resize: none;
 }
 
-form button {
+/* form button {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -102,4 +102,25 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+} */
+
+.form-button {
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+  margin: 0 5px; /* Add margin to separate buttons */
+}
+
+.save-button {
+  background: #4caf50; /* Green */
+}
+
+.cancel-button {
+  background: #f44336; /* Red */
 }

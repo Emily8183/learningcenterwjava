@@ -6,6 +6,8 @@ import CreateDiary from "./CreateDiary";
 function DiaryList() {
   const [diaries, setDiaries] = useState([]);
 
+  const [editingDiaryId, setEditingDiaryId] = useState(null);
+
   useEffect(() => {
     const fetchDiaries = async () => {
       try {
@@ -54,9 +56,10 @@ function DiaryList() {
         setDiaries((prevDiaries) =>
           prevDiaries.map(
             (diary) =>
-              diary.diary_id === updatedDiary.diary_id ? response.data : diary //ternary operator
+              diary.diary_id === updatedDiary.diary_id ? response.data : diary //ternary operator, update diary or keep the existing one
           )
         );
+        setEditingDiaryId(diary_Id);
       })
       .catch((error) => console.log(error));
   };
@@ -73,9 +76,13 @@ function DiaryList() {
               <li key={diary.diary_id}>
                 <DiaryItem
                   diary_id={diary.diary_id}
+                  isEditing={editingDiaryId === diary.diary_id}
+                  // startEditing={() => startEditing(diary.diary_id)}
+                  // stopEditing={stopEditing}
                   onDelete={() => handleDelete(diary.diary_id)}
-                  onEdit={(updatedDiary) =>
-                    handleEdit(diary.diary_id, updatedDiary)
+                  handlePatch={
+                    (updatedDiary) => handleEdit(diary.diary_id, updatedDiary)
+                    // onClick={() => startEditing(diary.diary_id)}
                   }
                 />
               </li>
