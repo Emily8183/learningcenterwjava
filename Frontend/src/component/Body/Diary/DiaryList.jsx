@@ -8,6 +8,8 @@ function DiaryList() {
 
   const [editingDiaryId, setEditingDiaryId] = useState(null);
 
+  const [isEditing, setIsEditing] = useState(false);
+
   useEffect(() => {
     const fetchDiaries = async () => {
       try {
@@ -49,19 +51,15 @@ function DiaryList() {
       .catch((error) => console.log(error));
   };
 
-  const handleEdit = (diary_id, updatedDiary) => {
-    axios
-      .patch(`http://localhost:8080/api/diaries/${diary_id}`, updatedDiary)
-      .then((response) => {
-        setDiaries((prevDiaries) =>
-          prevDiaries.map(
-            (diary) =>
-              diary.diary_id === updatedDiary.diary_id ? response.data : diary //ternary operator, update diary or keep the existing one
-          )
-        );
-        setEditingDiaryId(diary_Id);
-      })
-      .catch((error) => console.log(error));
+  const startEditing = (diary_id) => {
+    console.log("Starting to edit diary with id:", diary_id);
+    setIsEditing(true);
+    setEditingDiaryId(diary_id);
+  };
+
+  const stopEditing = () => {
+    console.log("1");
+    setEditingDiaryId(null);
   };
 
   return (
@@ -77,13 +75,14 @@ function DiaryList() {
                 <DiaryItem
                   diary_id={diary.diary_id}
                   isEditing={editingDiaryId === diary.diary_id}
-                  // startEditing={() => startEditing(diary.diary_id)}
-                  // stopEditing={stopEditing}
+                  startEditing={() => startEditing(diary.diary_id)}
+                  stopEditing={stopEditing}
                   onDelete={() => handleDelete(diary.diary_id)}
-                  handlePatch={
-                    (updatedDiary) => handleEdit(diary.diary_id, updatedDiary)
-                    // onClick={() => startEditing(diary.diary_id)}
-                  }
+                  // onEdit={() => handleEdit(diary.diary_id)}
+                  // handlePatch={
+                  //   (updatedDiary) => handleEdit(diary.diary_id, updatedDiary)
+                  //   // onClick={() => startEditing(diary.diary_id)}
+                  // }
                 />
               </li>
             ))}
