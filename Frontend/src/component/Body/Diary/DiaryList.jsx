@@ -78,11 +78,6 @@ function DiaryList() {
                   startEditing={() => startEditing(diary.diary_id)}
                   stopEditing={stopEditing}
                   onDelete={() => handleDelete(diary.diary_id)}
-                  // onEdit={() => handleEdit(diary.diary_id)}
-                  // handlePatch={
-                  //   (updatedDiary) => handleEdit(diary.diary_id, updatedDiary)
-                  //   // onClick={() => startEditing(diary.diary_id)}
-                  // }
                 />
               </li>
             ))}

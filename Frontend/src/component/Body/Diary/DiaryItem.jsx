@@ -18,8 +18,6 @@ function DiaryItem({
     content: "",
   });
 
-  // const [isEditing, setIsEditing] = useState(false);
-
   useEffect(() => {
     const fetchDiary = async () => {
       try {
@@ -35,15 +33,7 @@ function DiaryItem({
 
     fetchDiary();
   }, [diary_id]);
-
-  // const startEditing = (diary_id) => {
-  //   setIsEditing(true);
-  //   setEditingDiaryId(diary_id);
-  // };
-
-  // const stopEditing = () => {
-  //   setEditingDiaryId(null);
-  // };
+  //当diary_id发生变化时，fetchDiary函数将会重新调用，以确保所获取的日记数据是最新的
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,22 +42,6 @@ function DiaryItem({
       [name]: value,
     });
   };
-
-  // const handlePatch = (diary_id, e) => {
-  //   e.preventDefault();
-
-  //   onEdit(diary_id, editedDiary);
-  //   // setEditedDiary(diary_id);
-  //   // setIsEditing(false);
-  //   stopEditing();
-  // };
-
-  // const handleCancel = (e) => {
-  //   e.preventDefault();
-
-  //   setIsEditing(!isEditing);
-  //   setEditedDiary(initialDiary);
-  // };
 
   const handleSave = (e) => {
     e.preventDefault();
