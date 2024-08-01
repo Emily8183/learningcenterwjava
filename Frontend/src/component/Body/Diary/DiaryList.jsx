@@ -58,7 +58,6 @@ function DiaryList() {
   };
 
   const stopEditing = () => {
-    console.log("1");
     setEditingDiaryId(null);
   };
 

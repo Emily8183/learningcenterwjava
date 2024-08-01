@@ -46,6 +46,13 @@ public class DiaryController {
 
         return ResponseEntity.ok(CollectionModel.of(diaries,
                 linkTo(methodOn(DiaryController.class).getAllDiaries()).withSelfRel()));
+
+//        try {
+//            // Assuming diaryService.getAllDiaries() returns a list of diaries
+//            return ResponseEntity.ok(diaryService.getAllDiaries());
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error retrieving diaries");
+//        }
     }
 
     @GetMapping("/{diary_id}")
@@ -62,6 +69,26 @@ public class DiaryController {
     public ResponseEntity<Diary> createDiary(@RequestBody Diary diary) {
         Diary createdDiary = diaryRepository.save(diary);
         return ResponseEntity.ok(createdDiary);
+    }
+
+    @PatchMapping("/{diary_id}")
+    public ResponseEntity<Diary> updateDiary(@PathVariable Long diary_id, @RequestBody Diary updatedDiary) {
+        Optional<Diary> optionalDiary = diaryRepository.findById(diary_id);
+
+        if (!optionalDiary.isPresent()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        Diary diary = optionalDiary.get();
+        if (updatedDiary.getTitle() != null) {
+            diary.setTitle(updatedDiary.getTitle());
+        }
+        if (updatedDiary.getContent() != null) {
+            diary.setContent(updatedDiary.getContent());
+        }
+
+        diaryRepository.save(diary);
+        return ResponseEntity.ok(diary);
     }
 
     @DeleteMapping("/{diary_id}")
