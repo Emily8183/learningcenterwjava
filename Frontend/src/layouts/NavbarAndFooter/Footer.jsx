@@ -4,26 +4,52 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="main-color">
-      <footer
-        className="container d-flex flex-wrap 
-        justify-content-between align-items-center py-5 main-color"
-      >
-        <p className="col-md-4 mb-0 text-white">Copyright (c) {currentYear}</p>
-        <ul className="nav navbar-dark col-md-4 justify-content-end">
-          <li className="nav-item">
-            {/* <Link to='/home' className='nav-link px-2 text-white'> */}
-            Home
-            {/* </Link> */}
-          </li>
-          <li className="nav-item">
-            {/* <Link to='/search' className='nav-link px-2 text-white'> */}
-            Contact Me
-            {/* </Link> */}
-          </li>
-        </ul>
-      </footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#!">About</a>
+            </li>
+            <li class="list-inline-item">⋅</li>
+            <li class="list-inline-item">
+              <a href="#!">Contact</a>
+            </li>
+            <li class="list-inline-item">⋅</li>
+            <li class="list-inline-item">
+              <a href="#!">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">⋅</li>
+            <li class="list-inline-item">
+              <a href="#!">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">
+            &copy; {currentYear}. All Rights Reserved.
+          </p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item me-4">
+              <a href="#!">
+                <i class="bi-facebook fs-3"></i>
+              </a>
+            </li>
+            <li class="list-inline-item me-4">
+              <a href="#!">
+                <i class="bi-twitter fs-3"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#!">
+                <i class="bi-instagram fs-3"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+    // </footer>
   );
 }
 
