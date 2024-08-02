@@ -1,23 +1,25 @@
 const HighlightsData = [
   {
     id: 1,
-    title: "Articles & Blogs",
+    title: "What's New",
     description:
-      "New technologies are appealing. Mark them down as a bonus of a day.",
+      "Everything I find interesting about being a software engineer.",
     image: "https://picsum.photos/id/237/",
   },
 
   {
     id: 2,
     title: "How I Work on Projects",
-    description: "Find out my learning tips while working on projects.",
+    description:
+      "Find out my experiences gained from working on various projects.",
     image: "https://picsum.photos/id/237/",
   },
 
   {
     id: 3,
     title: "#100LeetCodeChallenge",
-    description: "Reaching my first LeetCode milestone. Find out how I did it.",
+    description:
+      "LeetCode is about quality over quantity. Explore my learning tips.",
     image: "https://picsum.photos/id/237/",
   },
 ];

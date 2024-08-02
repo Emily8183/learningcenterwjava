@@ -1,13 +1,13 @@
 import React from "react";
 import HomePageBanner from "./components/HomePageBanner";
-import Hightlights from "./components/Highlights";
+import HightlightsLayout from "./components/HighlightsLayout";
 // import "./HomePage.css";
 
 function HomePage() {
   return (
     <>
       <HomePageBanner />
-      <Hightlights />
+      <HightlightsLayout />
     </>
   );
 }
