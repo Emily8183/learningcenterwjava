@@ -44,7 +44,7 @@ function Navbar() {
 
             <li className="nav-item">
               {/* <NavLink className="nav-link" to="/softskills"> */}
-              Soft Skills
+              Professional Skills
               {/* </NavLink> */}
             </li>
 

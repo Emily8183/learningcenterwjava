@@ -10,9 +10,9 @@ function HomePageBanner() {
               <div className="text-center text-white">
                 <h1 className="mb-5">Emily Lin</h1>
                 <p>
-                  This is a simple diary app built with React.js and Node.js. It
-                  is designed to help you keep track of your thoughts and
-                  feelings.
+                  Seeking a Junior Software Engineer position to leverage my
+                  full-stack technical skills and product development experience
+                  in achieving corporate and team goals.
                 </p>
               </div>
             </div>
