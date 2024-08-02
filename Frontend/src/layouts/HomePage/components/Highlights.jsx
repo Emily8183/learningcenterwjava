@@ -9,12 +9,13 @@ function Highlights() {
             <div className="col-lg-4">
               <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                 <div className="features-icons-icon d-flex">
-                  {/* TODO: insert a icon here */}
-                  {/* <link
-                    rel="icon"
-                    type="image/x-icon"
-                    href=".../assets/img/publicImages/favicon.ico"
+                  {/* <img
+                    src={require("/assets/img/publicImages/favicon.ico")}
+                    width="151"
+                    height="233"
+                    alt="anicon" //to change the icon
                   /> */}
+
                   <i className="bi-window m-auto text-primary"></i>
                 </div>
                 <h3>Fully Responsive</h3>
