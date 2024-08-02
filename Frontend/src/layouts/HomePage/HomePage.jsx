@@ -1,11 +1,12 @@
 import React from "react";
+import HomePageBanner from "./components/HomePageBanner";
 // import "./HomePage.css";
 
 function HomePage() {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <>
+      <HomePageBanner />
+    </>
   );
 }
 
