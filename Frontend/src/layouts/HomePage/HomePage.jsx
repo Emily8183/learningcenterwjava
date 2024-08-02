@@ -1,9 +1,12 @@
-import 
+import React from "react";
+// import "./HomePage.css";
 
-export const HomePage = () => {
-    return (
-        <div>
-            <h1>Home Page</h1>
-        </div>
-    );
-};
+function HomePage() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+    </div>
+  );
+}
+
+export default HomePage;
