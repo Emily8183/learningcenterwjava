@@ -1,6 +1,6 @@
 import React from "react";
 
-function Highlights() {
+function HighlightsLayout() {
   return (
     <>
       <section className="features-icons bg-light text-center">
@@ -31,4 +31,4 @@ function Highlights() {
   );
 }
 
-export default Highlights;
+export default HighlightsLayout;
