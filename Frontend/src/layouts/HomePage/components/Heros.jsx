@@ -1,11 +1,20 @@
 import React from "react";
+// import image4 from "../.././assets/img/publicimages/image4.jpg";
+import image4 from "./image4.jpg";
+// import "../../../App.css";
+// TODO: import图片的路径要改
+// TODO：页面尺寸改变后，图片不显示，且只显示两个heros
+
 function Heros() {
   return (
     <div>
       <div className="d-none d-lg-block">
         <div className="row g-0 mt-5">
           <div className="col-sm-6 col-md-6">
-            <div className="col-image-left"></div>
+            <div
+              className="col-image-left"
+              style={{ backgroundImage: `url(${image4})` }}
+            ></div>
           </div>
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
             <div className="ml-2">
@@ -22,7 +31,7 @@ function Heros() {
           </div>
         </div>
 
-        <div className="row g-0 mt-5">
+        <div className="row g-0">
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
             <div className="ml-2">
               <h1>LeetCode Solutions</h1>
@@ -41,7 +50,7 @@ function Heros() {
           </div>
         </div>
 
-        <div className="row g-0 mt-5">
+        <div className="row g-0">
           <div className="col-sm-6 col-md-6">
             <div className="col-image-left"></div>
           </div>
