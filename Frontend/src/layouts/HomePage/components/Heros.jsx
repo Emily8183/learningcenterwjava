@@ -1,6 +1,6 @@
 import React from "react";
-// import image4 from "../.././assets/img/publicimages/image4.jpg";
-import image4 from "./image4.jpg";
+import image4 from "../../../assets/img/publicImages/image4.jpg";
+// import image4 from "./image4.jpg";
 // import "../../../App.css";
 // TODO: import图片的路径要改
 // TODO：页面尺寸改变后，图片不显示，且只显示两个heros
