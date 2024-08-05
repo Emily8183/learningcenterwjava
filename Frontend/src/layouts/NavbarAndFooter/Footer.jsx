@@ -1,4 +1,5 @@
 import React from "react";
+import { SiXiaohongshu } from "react-icons/si";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -43,14 +44,16 @@ function Footer() {
             {/* TODO: 改一下这两个icon的链接 */}
             <li className="list-inline-item me-4">
               <a href="#!">
-                <i className="bi bi-discord fs-3"></i>
+                <i>
+                  <SiXiaohongshu />
+                </i>
               </a>
             </li>
-            <li className="list-inline-item me-4">
+            {/* <li className="list-inline-item me-4">
               <a href="#!">
                 <i className="bi bi-slack fs-3"></i>
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

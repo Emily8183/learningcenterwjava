@@ -10,16 +10,12 @@ function HighlightsLayout() {
             {HighlightsData.map((prop) => (
               <div className="col-lg-4" key={prop.id}>
                 <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                  <div className="features-icons-icon d-flex">
-                    {/* <img
-                      src={require("/assets/img/publicImages/favicon.ico")}
-                      width="151"
-                      height="233"
-                      alt="anicon" //to change the icon
-                    /> */}
-
-                    <i className={`${prop.icon}m-auto text-primary`}></i>
-                  </div>
+                  {/* <div className="features-icons-icon d-flex"> */}
+                  <prop.icon
+                    size={100}
+                    style={{ marginBottom: "30px" }}
+                  ></prop.icon>
+                  {/* </div> */}
                   <h3>{prop.title}</h3>
                   <p className="lead mb-0">{prop.description}</p>
                 </div>
