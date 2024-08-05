@@ -11,7 +11,7 @@ body {
   padding: 0 16px;
 }
 
-header {
+/* header {
   background-color: #f5ba13;
   margin: auto -16px;
   padding: 16px 32px;
@@ -22,7 +22,7 @@ header h1 {
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
-}
+} */
 
 footer {
   position: absolute;

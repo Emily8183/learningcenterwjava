@@ -17,41 +17,41 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <ul className="navbar-nav">
+        <div className="collapse navbar-collapse">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              {/* <NavLink className="nav-link" to="/home"> */}
-              Home
-              {/* </NavLink> */}
+              <a className="nav-link active" aria-current="page" href="#">
+                Home
+              </a>
             </li>
             <li className="nav-item">
-              {/* <NavLink className="nav-link" to="/articles"> */}
-              Articles
-              {/* </NavLink> */}
-            </li>
-
-            <li className="nav-item">
-              {/* <NavLink className="nav-link" to="/projects"> */}
-              Projects
-              {/* </NavLink> */}
+              <a className="nav-link" href="#">
+                Articles
+              </a>
             </li>
 
             <li className="nav-item">
-              {/* <NavLink className="nav-link" to="/leetcode"> */}
-              LeetCode
-              {/* </NavLink> */}
+              <a className="nav-link" href="#">
+                Projects
+              </a>
             </li>
 
             <li className="nav-item">
-              {/* <NavLink className="nav-link" to="/softskills"> */}
-              Professional Skills
-              {/* </NavLink> */}
+              <a className="nav-link" href="#">
+                LeetCode
+              </a>
             </li>
 
             <li className="nav-item">
-              {/* <NavLink className="nav-link" to="/contact"> */}
-              Contact Me
-              {/* </NavLink> */}
+              <a className="nav-link" href="#">
+                Professional Skills
+              </a>
+            </li>
+
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Contact Me
+              </a>
             </li>
           </ul>
           {/* <ul className='navbar-nav ms-auto'>
