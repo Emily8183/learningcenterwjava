@@ -10,7 +10,7 @@ function App() {
       <div className="flex-grow-1">
         <HomePage />
       </div>
-      <Footer className="footer bg-light" />
+      <Footer />
     </div>
   );
 }

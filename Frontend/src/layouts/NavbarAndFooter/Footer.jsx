@@ -1,11 +1,13 @@
 import React from "react";
 import { SiXiaohongshu } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="container">
+    <div className="footer py-5 mt-auto container">
       <div className="row">
         <div className="col-lg-6 h-100 text-center text-lg-start my-auto">
           <ul className="list-inline mb-2">
@@ -33,19 +35,23 @@ function Footer() {
           <ul className="list-inline mb-0">
             <li className="list-inline-item me-4">
               <a href="http://www.linkedin.com/in/emily-zhiying-lin">
-                <i className="bi bi-linkedin fs-3"></i>
+                <i>
+                  <FaLinkedin size={50} />
+                </i>
               </a>
             </li>
             <li className="list-inline-item me-4">
               <a href="https://github.com/Emily8183">
-                <i className="bi bi-github fs-3"></i>
+                <i>
+                  <IoLogoGithub size={50} />
+                </i>
               </a>
             </li>
-            {/* TODO: 改一下这两个icon的链接 */}
+            {/* TODO: insert the hyperlink of xiaohongshu*/}
             <li className="list-inline-item me-4">
               <a href="#!">
                 <i>
-                  <SiXiaohongshu />
+                  <SiXiaohongshu size={80} />
                 </i>
               </a>
             </li>
