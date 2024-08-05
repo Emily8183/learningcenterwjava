@@ -18,7 +18,7 @@ function HighlightsLayout() {
                       alt="anicon" //to change the icon
                     /> */}
 
-                    <i className={`${prop.iconClass}m-auto text-primary`}></i>
+                    <i className={`${prop.icon}m-auto text-primary`}></i>
                   </div>
                   <h3>{prop.title}</h3>
                   <p className="lead mb-0">{prop.description}</p>
