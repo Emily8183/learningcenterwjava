@@ -7,8 +7,7 @@ const HighlightsData = [
     id: 1,
     icon: HiOutlineLightBulb,
     title: "What's New",
-    description:
-      "Everything I find interesting about being a software engineer.",
+    description: "General interesting aspects about being a software engineer.",
     image: "https://picsum.photos/id/237/",
   },
 
