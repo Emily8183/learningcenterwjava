@@ -1,11 +1,11 @@
 import React from "react";
-// import DiariesList from "./DiariesList";
+import DiariesList from "./components/DiariesList";
 
 function Projects() {
   return (
     <>
       <h1>111</h1>
-      {/* <DiariesList /> */}
+      <DiariesList />
     </>
   );
 }

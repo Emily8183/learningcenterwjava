@@ -1,24 +1,16 @@
 import React from "react";
+import PageBanner from "../../NavbarAndFooter/PageBanner";
 
 function HomePageBanner() {
   return (
     <>
-      <div className="masthead p-5 mb-4 bg-dark header">
-        <div className="container position-relative">
-          <div className="row justify-content-center">
-            <div className="col-xl-7">
-              <div className="text-center text-white">
-                <h1 className="mb-5">Emily Lin</h1>
-                <p className="fs-4 mb-4">
-                  Seeking a Junior Software Engineer position to leverage my
-                  full-stack technical skills and product development experience
-                  in achieving corporate and team goals.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PageBanner
+        title="Emily Lin"
+        content="
+          Seeking a Junior Software Engineer position to leverage my full-stack
+          technical skills and product development experience in achieving
+          corporate and team goals."
+      />
     </>
   );
 }
