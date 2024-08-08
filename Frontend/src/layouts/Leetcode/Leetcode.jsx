@@ -5,7 +5,6 @@ import SolutionsList from "./components/SolutionsList";
 function Leetcode() {
   return (
     <>
-      {/* <SolutionsList /> */}
       <LeetcodePageBanner />
       <SolutionsList />
     </>

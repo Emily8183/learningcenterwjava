@@ -26,9 +26,9 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Articles
-              </a>
+              <Link to={`/insights`} className="nav-link">
+                Insights
+              </Link>
             </li>
 
             <li className="nav-item">
@@ -44,15 +44,15 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Professional Skills
-              </a>
+              <Link to={`/skills`} className="nav-link">
+                Skills
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Contact Me
-              </a>
+              <Link to={`/contact`} className="nav-link">
+                Contact
+              </Link>
             </li>
           </ul>
           {/* <ul className='navbar-nav ms-auto'>
