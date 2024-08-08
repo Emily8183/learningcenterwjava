@@ -3,7 +3,7 @@ import ProjectsPageBanner from "./ProjectsPageBanner";
 import { Link } from "react-router-dom";
 import DiariesData from "./DiariesData";
 
-function DiariesList({ diariesData }) {
+function DiariesList() {
   return (
     <>
       <ProjectsPageBanner />
@@ -30,18 +30,6 @@ function DiariesList({ diariesData }) {
                       <span className="post-meta">Posted on {diary.date}</span>
                     </li>
                   ))}
-                  {/* <a href="#">
-                  {/* TODO: remove the hyperlink  */}
-                  {/* TODO: make the words bolder */}
-                  {/* <h2 className="post-title">
-                    Man must explore, and this is exploration at its greatest
-                  </h2>
-                  <h3 className="post-subtitle">
-                    Problems look mighty small from 150 miles up
-                  </h3>
-                </a> */}
-
-                  {/* <span className="post-meta">Posted on August 24, 2023</span> */}
                 </div>
               </div>
             </div>
