@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DiariesData from "./DiariesData";
+import SolutionsData from "./SolutionsData";
 
-function DiariesList() {
+function SolutionsList() {
   return (
     <>
       <header className="masthead">
@@ -14,17 +14,21 @@ function DiariesList() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-10 col-lg-8 col-xl-7">
                 <div className="post-preview">
-                  {DiariesData.map((diary) => (
-                    <li key={diary.id}>
+                  {SolutionsData.map((solution) => (
+                    <li key={solution.id}>
                       <h2 className="post-title">
-                        <Link to={`/projects/${diary.id}`}>{diary.title}</Link>
+                        <Link to={`/leetcode/${solution.id}`}>
+                          {solution.title}
+                        </Link>
                       </h2>
                       <h3 className="post-subtitle">
-                        <Link to={`/projects/${diary.id}`}>
-                          {diary.summary}
+                        <Link to={`/leetcode/${solution.id}`}>
+                          {solution.summary}
                         </Link>
                       </h3>
-                      <span className="post-meta">Posted on {diary.date}</span>
+                      <span className="post-meta">
+                        Posted on {solution.date}
+                      </span>
                     </li>
                   ))}
                 </div>
@@ -37,4 +41,4 @@ function DiariesList() {
   );
 }
 
-export default DiariesList;
+export default SolutionsList;

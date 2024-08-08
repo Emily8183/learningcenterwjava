@@ -1,5 +1,6 @@
 import HomePage from "./layouts/HomePage/HomePage";
 import Projects from "./layouts/Projects/Projects";
+import Leetcode from "./layouts/Leetcode/Leetcode";
 import Navbar from "./layouts/NavbarAndFooter/Navbar";
 import Footer from "./layouts/NavbarAndFooter/Footer";
 import ProjectDiary from "./layouts/Projects/components/ProjectDiary";
