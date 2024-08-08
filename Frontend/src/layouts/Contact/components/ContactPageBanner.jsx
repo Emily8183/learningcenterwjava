@@ -4,7 +4,7 @@ import PageBanner from "../../NavbarAndFooter/PageBanner";
 function ContactPageBanner() {
   return (
     <>
-      {/* TODO: update the content on the projects page */}
+      {/* TODO: update the content on the contact page */}
       <PageBanner
         title="Contact Solutions"
         content="
