@@ -14,20 +14,20 @@ function SolutionsList() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-10 col-lg-8 col-xl-7">
                 <div className="post-preview">
-                  {SolutionsData.map((solution) => (
-                    <li key={solution.id}>
+                  {SolutionsData.map((leetcodeSolution) => (
+                    <li key={leetcodeSolution.id}>
                       <h2 className="post-title">
-                        <Link to={`/leetcode/${solution.id}`}>
-                          {solution.title}
+                        <Link to={`/leetcode/${leetcodeSolution.id}`}>
+                          {leetcodeSolution.title}
                         </Link>
                       </h2>
                       <h3 className="post-subtitle">
-                        <Link to={`/leetcode/${solution.id}`}>
-                          {solution.summary}
+                        <Link to={`/leetcode/${leetcodeSolution.id}`}>
+                          {leetcodeSolution.summary}
                         </Link>
                       </h3>
                       <span className="post-meta">
-                        Posted on {solution.date}
+                        Posted on {leetcodeSolution.date}
                       </span>
                     </li>
                   ))}

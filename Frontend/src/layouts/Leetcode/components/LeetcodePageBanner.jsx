@@ -4,7 +4,7 @@ import PageBanner from "../../NavbarAndFooter/PageBanner";
 function LeetcodePageBanner() {
   return (
     <>
-      {/* TODO: update the content on the projects page */}
+      {/* TODO: update the content on the solution page */}
       <PageBanner
         title="Leetcode Solutions"
         content="

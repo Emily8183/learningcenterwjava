@@ -14,17 +14,21 @@ function DiariesList() {
             <div className="row gx-4 gx-lg-5 justify-content-center">
               <div className="col-md-10 col-lg-8 col-xl-7">
                 <div className="post-preview">
-                  {DiariesData.map((diary) => (
-                    <li key={diary.id}>
+                  {DiariesData.map((projectDiary) => (
+                    <li key={projectDiary.id}>
                       <h2 className="post-title">
-                        <Link to={`/projects/${diary.id}`}>{diary.title}</Link>
+                        <Link to={`/projects/${projectDiary.id}`}>
+                          {projectDiary.title}
+                        </Link>
                       </h2>
                       <h3 className="post-subtitle">
-                        <Link to={`/projects/${diary.id}`}>
-                          {diary.summary}
+                        <Link to={`/projects/${projectDiary.id}`}>
+                          {projectDiary.summary}
                         </Link>
                       </h3>
-                      <span className="post-meta">Posted on {diary.date}</span>
+                      <span className="post-meta">
+                        Posted on {projectDiary.date}
+                      </span>
                     </li>
                   ))}
                 </div>
