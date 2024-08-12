@@ -9,7 +9,7 @@ public abstract class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //说明id是自增长的主键
-    private Long diary_id;
+    private Long id;
 
     private String title;
 

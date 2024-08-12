@@ -1,9 +1,11 @@
 package com.emproject.learningcenterwithjava.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
-@Table(name="project_diaries")
+@Data
+@Table(name="projectdiary")
 public class ProjectDiary extends Post{
 
     @Column(name = "category")
@@ -11,5 +13,6 @@ public class ProjectDiary extends Post{
 
     @Column(name = "projectName")
     private String projectName;
-    
+
+
 }
