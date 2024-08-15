@@ -13,5 +13,9 @@ public abstract class Post {
 
     private String title;
 
+    private String summary;
+
     private String content;
+
+    private String date;
 }
