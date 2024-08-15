@@ -3,9 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
+/* html {
   font-family: "Montserrat", sans-serif;
-}
+} */
 body {
   background: #eee;
   padding: 0 16px;
@@ -150,7 +150,7 @@ footer p {
   list-style: none;
 }
 
-.post-preview > a {
+/* .post-preview > a {
   color: #212529;
 }
 .post-preview > a:focus,
@@ -181,4 +181,4 @@ footer p {
   .post-preview > a > .post-title {
     font-size: 2.25rem;
   }
-}
+} */

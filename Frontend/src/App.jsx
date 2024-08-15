@@ -21,18 +21,18 @@ function App() {
       {/* 即<BrowserRouter> */}
       <div className="d-flex flex-column min-vh-100">
         <Navbar />
-        <div className="flex-grow-1">
-          <Routes>
-            <Route path="/" element={<Navigate to="/home" />} />
-            <Route path="home" element={<HomePage />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="projects/:id" element={<ProjectDiary />} />
-            <Route path="/leetcode" element={<Leetcode />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
+        {/* <div className="flex-grow-1"> */}
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="projects/:id" element={<ProjectDiary />} />
+          <Route path="/leetcode" element={<Leetcode />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        {/* </div> */}
         <Footer />
       </div>
     </Router>
