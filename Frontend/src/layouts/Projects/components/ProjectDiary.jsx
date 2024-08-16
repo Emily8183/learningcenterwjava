@@ -55,6 +55,13 @@ function ProjectDiary() {
         <div className="container px-4 px-lg-5">
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-10 col-lg-8 col-xl-7">
+              <figure class="mb-4">
+                <img
+                  class="img-fluid rounded"
+                  src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
+                  alt="..."
+                />
+              </figure>
               <p>{projectDiary.content}</p>
             </div>
           </div>
