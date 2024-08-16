@@ -50,23 +50,39 @@ function ProjectDiary() {
 
   return (
     <>
-      <PageBanner title={projectDiary.title} content={projectDiary.summary} />
-      <article className="mb-4">
-        <div className="container px-4 px-lg-5">
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            <div className="col-md-10 col-lg-8 col-xl-7">
-              <figure class="mb-4">
-                <img
-                  class="img-fluid rounded"
-                  src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
-                  alt="..."
-                />
-              </figure>
-              <p>{projectDiary.content}</p>
+      <div class="container mt-5">
+        <article>
+          <header className="mb-4">
+            {/* Post title */}
+            <h1 class="fw-bolder mb-1">{projectDiary.title}</h1>
+            <div class="text-muted fst-italic mb-2">
+              Posted on {projectDiary.date}
+            </div>
+            <a
+              class="badge bg-secondary text-decoration-none link-light"
+              href="#!"
+            >
+              Link to project
+            </a>
+          </header>
+
+          {/* Preview image figure */}
+          <div className="container px-4 px-lg-5">
+            <div className="row gx-4 gx-lg-5 justify-content-center">
+              <div className="col-md-10 col-lg-8 col-xl-7">
+                <figure class="mb-4">
+                  <img
+                    class="img-fluid rounded"
+                    src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
+                    alt="..."
+                  />
+                </figure>
+                <p>{projectDiary.content}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </>
   );
 }
