@@ -40,35 +40,40 @@ function DiariesList() {
   return (
     <>
       <div className="container px-4 px-lg-5">
-        {/* <ul> */}
         <div className="row gx-4 gx-lg-5 justify-content-center">
           <div className="col-md-10 col-lg-8 col-xl-7">
-            <article className="post-preview">
-              <a href="post.html">
+            <div className="post-preview">
+              {/* <a href="post.html">
                 <h2 className="post-title">Man must</h2>
-              </a>
-              {/* {diaries.map((projectDiary) => (
-                  <li key={projectDiary.id}>
-                    <h2 className="post-title">
-                      <Link to={`/projects/${projectDiary.id}`}>
-                        {projectDiary.title}
-                      </Link>
-                    </h2>
-                    <h3 className="post-subtitle">
-                      <Link to={`/projects/${projectDiary.id}`}>
-                        {projectDiary.summary}
-                      </Link>
-                    </h3>
-                    <span className="post-meta">
-                      Posted on {projectDiary.date}
-                    </span>
-                  </li> */}
-              {/* ))} */}
-            </article>
+                <h3 className="post-subtitle">Problems</h3>
+              </a> */}
+              {diaries.map((projectDiary) => (
+                <div key={projectDiary.id}>
+                  <h2 className="post-title">
+                    <Link
+                      to={`/projects/${projectDiary.id}`}
+                      className="post-link"
+                    >
+                      {projectDiary.title}
+                    </Link>
+                  </h2>
+                  <h3 className="post-subtitle">
+                    <Link
+                      to={`/projects/${projectDiary.id}`}
+                      className="post-link"
+                    >
+                      {projectDiary.summary}
+                    </Link>
+                  </h3>
+                  <span className="post-meta">
+                    Posted on {projectDiary.date}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      {/* </ul> */}
     </>
   );
 }

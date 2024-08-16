@@ -3,13 +3,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* html {
-  font-family: "Montserrat", sans-serif;
-} */
-body {
-  background: #eee;
-  padding: 0 16px;
-}
 
 /* header {
   background-color: #f5ba13;
@@ -36,7 +29,7 @@ footer p {
   color: #ccc;
 }
 
-.diaryItem {
+/* .diaryItem {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
@@ -66,7 +59,7 @@ footer p {
   height: 36px;
   cursor: pointer;
   outline: none;
-}
+} */
 
 form {
   position: relative;

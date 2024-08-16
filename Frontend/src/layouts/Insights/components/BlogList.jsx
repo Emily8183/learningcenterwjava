@@ -17,10 +17,10 @@ function BlogList() {
                   {BlogData.map((blog) => (
                     <li key={blog.id}>
                       <h2 className="post-title">
-                        <Link to={`/leetcode/${blog.id}`}>{blog.title}</Link>
+                        <Link to={`/insights/${blog.id}`}>{blog.title}</Link>
                       </h2>
                       <h3 className="post-subtitle">
-                        <Link to={`/leetcode/${blog.id}`}>{blog.summary}</Link>
+                        <Link to={`/insights/${blog.id}`}>{blog.summary}</Link>
                       </h3>
                       <span className="post-meta">Posted on {blog.date}</span>
                     </li>

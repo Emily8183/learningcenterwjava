@@ -1,3 +1,4 @@
+import React from "react";
 import HomePage from "./layouts/HomePage/HomePage";
 import Projects from "./layouts/Projects/Projects";
 import Leetcode from "./layouts/Leetcode/Leetcode";
@@ -25,9 +26,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="home" element={<HomePage />} />
-          <Route path="/insights" element={<Insights />} />
+          <Route path="insights" element={<Insights />} />
+          <Route path="insights/:id" element={<Insights />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="projects/:id" element={<ProjectDiary />} />
+          <Route path="projectDiaries/:id" element={<ProjectDiary />} />
           <Route path="/leetcode" element={<Leetcode />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
