@@ -26,7 +26,7 @@ function ProjectDiary() {
         setDiary(response.data);
         setLoading(false);
       } catch (error) {
-        setError(error);
+        setError("error fetching diary");
         setLoading(false);
       }
     };
