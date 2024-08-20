@@ -6,10 +6,24 @@ function HomePageBanner() {
     <>
       <PageBanner
         title="Emily Lin"
-        content="
-          Seeking a Junior Software Engineer position to leverage my full-stack
-          technical skills and product development experience in achieving
-          corporate and team goals."
+        content={
+          <>
+            <p>
+              Product Development | Full Stack Web Developer | Project
+              Management
+            </p>
+            <br></br>
+            {/* TODO: change the format of this para */}
+
+            <p>Understand the why, define the what, and execute the how.</p>
+
+            <p>
+              With a background in product design and localization, I know why
+              products matter and use my technical skills & teamwork to turn
+              concepts into reality.
+            </p>
+          </>
+        }
       />
     </>
   );
