@@ -1,5 +1,6 @@
 import React from "react";
 import HighlightsData from "./HighlightsData";
+import { Link } from "react-router-dom";
 
 function HighlightsLayout() {
   return (
@@ -10,13 +11,21 @@ function HighlightsLayout() {
             {HighlightsData.map((prop) => (
               <div className="col-lg-4" key={prop.id}>
                 <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                  {/* <div className="features-icons-icon d-flex"> */}
                   <prop.icon
                     size={100}
                     style={{ marginBottom: "30px" }}
                   ></prop.icon>
-                  {/* </div> */}
-                  <h3>{prop.title}</h3>
+
+                  <Link
+                    to={prop.path}
+                    style={{
+                      color: "inherit",
+                      textDecoration: "inherit",
+                    }}
+                  >
+                    <h3>{prop.title}</h3>
+                  </Link>
+
                   <p className="lead mb-0">{prop.description}</p>
                 </div>
               </div>

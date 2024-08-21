@@ -59,12 +59,11 @@ function Heros() {
             <div className="ml-2">
               <h1>Professional Skills Q&A</h1>
               <p className="lead">
-                - Over 10 years of experience in product and project management
+                - Ten years of experience in product development and project
+                management
                 <br />
-                - Self-guided on Web Development: gained 720+ followers on
-                social media
-                <br />
-                - Identify bottlenecks and find solutions to improve performance
+                - Self-guided on Web Development: gained 800+ followers since
+                Feb 2024
                 <br />
               </p>
             </div>
