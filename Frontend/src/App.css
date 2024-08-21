@@ -73,37 +73,45 @@ footer p {
 }
 
 .header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./assets/img/publicImages/image2.jpg");
+  background-image: 
+  /* linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), */ url("./assets/img/publicImages/headimage5.jpg");
   opacity: var(--mainOpacity);
   height: 25em !important;
 }
 
-.dark-overlay {
+/* .dark-overlay {
   background-color: rgba(0, 0, 0, 0.35);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
+} */
 
 .main-color {
   background-color: #0e76a8;
 }
 
-.col-image-left {
+.col-image-left-one {
   /* background-color: blue; */
-  background-image: url("./assets/img/publicImages/image4.jpg");
+  background-image: url("./assets/img/publicImages/project32.jpg");
+  height: 30em !important;
+  background-size: 100%;
+  /* display: block; */
+}
 
-  height: 25em !important;
+.col-image-left-two {
+  /* background-color: blue; */
+  background-image: url("./assets/img/publicImages/professional1.jpg");
+  height: 30em !important;
   background-size: 100%;
   /* display: block; */
 }
 
 .col-image-right {
-  background-image: url("./assets/img/publicImages/image1.jpg");
-  height: 25em !important;
+  background-image: url("./assets/img/publicImages/leetcode5.jpg");
+  height: 30em !important;
+  background-size: 100%;
 }
 
 .lost-image {

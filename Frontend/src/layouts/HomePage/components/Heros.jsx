@@ -3,7 +3,7 @@ import React from "react";
 // can import the image in this file too
 // import image4 from "../../../assets/img/publicImages/image4.jpg";
 
-// TODO：页面尺寸改变后，图片不显示，且只显示两个heros
+// TODO：页面尺尺寸变小后,显示出问题
 
 function Heros() {
   return (
@@ -12,13 +12,13 @@ function Heros() {
         <div className="row g-0 mt-5">
           <div className="col-sm-6 col-md-6">
             <div
-              className="col-image-left"
+              className="col-image-left-one"
               //   style={{ backgroundImage: `url(${image4})` }}
             ></div>
           </div>
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
             <div className="ml-2">
-              <h1>A Collection of My Projects</h1>
+              <h1>Project Display</h1>
               <p className="lead">
                 - Languages: JavaScript, TypeScript, Java
                 <br />
@@ -52,7 +52,7 @@ function Heros() {
 
         <div className="row g-0">
           <div className="col-sm-6 col-md-6">
-            <div className="col-image-left"></div>
+            <div className="col-image-left-two"></div>
           </div>
 
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
