@@ -1,11 +1,16 @@
 import React from "react";
 import PageBanner from "../../NavbarAndFooter/PageBanner";
+import { ReactTyped, Typed } from "react-typed";
 
 function HomePageBanner() {
   return (
     <>
       <PageBanner
-        title="Emily Lin"
+        title={
+          <>
+            <h1>Emily Lin</h1>
+          </>
+        }
         content={
           <>
             <p>
@@ -13,14 +18,16 @@ function HomePageBanner() {
               Management
             </p>
             <br></br>
-            {/* TODO: change the format of this para */}
-
-            <p>Understand the why, define the what, and execute the how.</p>
-
             <p>
-              With a background in product design and localization, I know why
-              products matter and use my technical skills & teamwork to turn
-              concepts into reality.
+              <ReactTyped
+                strings={[
+                  "Understand the why, define the what, and execute the how.",
+                  "With my background and skills, I know why products matter and turn concepts into reality.",
+                ]}
+                typeSpeed={100}
+                backSpeed={40}
+                loop
+              />
             </p>
           </>
         }
