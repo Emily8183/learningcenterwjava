@@ -70,6 +70,10 @@ footer p {
 
 :root {
   --mainOpacity: rgba(0, 0, 0, 0.55);
+  --tj-theme-primary: #609c24;
+  --tj-theme-secondary: #073305;
+  --tj-theme-accent-1: #040e04;
+  --tj-theme-accent-2: #140c1c;
 }
 
 .header {

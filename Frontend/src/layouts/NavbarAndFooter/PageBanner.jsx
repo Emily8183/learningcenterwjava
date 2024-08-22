@@ -3,7 +3,7 @@ import React from "react";
 function PageBanner({ title, content }) {
   return (
     <>
-      <div className="masthead p-5 mb-4 header">
+      <div className="masthead p-5 header">
         <div className="container position-relative">
           <div className="row justify-content-center">
             <div className="col-xl-10">

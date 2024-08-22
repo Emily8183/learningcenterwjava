@@ -30,7 +30,8 @@ function SolutionsList() {
 
                   {/* <img src={blog.image} alt="" /> */}
                   <a href="#" className="category">
-                    {blog.category}
+                    <p>1253534</p>
+                    {/* {blog.category} */}
                   </a>
                 </div>
                 <div className="blog-content">
