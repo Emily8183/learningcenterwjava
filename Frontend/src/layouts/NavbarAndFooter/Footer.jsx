@@ -10,23 +10,23 @@ function Footer() {
     <div className="footer py-5 mt-auto container">
       <div className="row">
         <div className="col-lg-6 h-100 text-center text-lg-start my-auto">
-          <ul className="list-inline mb-2">
+          {/* <ul className="list-inline mb-2 link-secondary">
             <li className="list-inline-item">
               <a href="#!">About</a>
             </li>
             <li className="list-inline-item">⋅</li>
             <li className="list-inline-item">
               <a href="#!">Contact</a>
-            </li>
-            <li className="list-inline-item">⋅</li>
+            </li> */}
+          {/* <li className="list-inline-item">⋅</li>
             <li className="list-inline-item">
               <a href="#!">Terms of Use</a>
             </li>
             <li className="list-inline-item">⋅</li>
             <li className="list-inline-item">
               <a href="#!">Privacy Policy</a>
-            </li>
-          </ul>
+            </li> 
+          </ul>*/}
           <p className="text-muted small mb-4 mb-lg-0">
             &copy; {currentYear}. All Rights Reserved.
           </p>
@@ -36,14 +36,14 @@ function Footer() {
             <li className="list-inline-item me-4">
               <a href="http://www.linkedin.com/in/emily-zhiying-lin">
                 <i>
-                  <FaLinkedin size={50} />
+                  <FaLinkedin size={50} style={{ color: "gray" }} />
                 </i>
               </a>
             </li>
             <li className="list-inline-item me-4">
               <a href="https://github.com/Emily8183">
                 <i>
-                  <IoLogoGithub size={50} />
+                  <IoLogoGithub size={50} style={{ color: "gray" }} />
                 </i>
               </a>
             </li>
@@ -51,7 +51,7 @@ function Footer() {
             <li className="list-inline-item me-4">
               <a href="#!">
                 <i>
-                  <SiXiaohongshu size={80} />
+                  <SiXiaohongshu size={80} style={{ color: "gray" }} />
                 </i>
               </a>
             </li>
