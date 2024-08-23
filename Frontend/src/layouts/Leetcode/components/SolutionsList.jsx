@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // import { CiCalendar } from "react-icons/ci";
 // import { FaRegComments } from "react-icons/fa";
-import leetcodeSolutionImage from "../../../assets/img/publicImages/leetcodesolution.png";
+// import leetcodeSolutionImage from "../../../assets/img/publicImages/leetcodesolution.png";
 
 function SolutionsList() {
   const [leetcodeSolutions, setLeetcodeSolutions] = useState([]);
@@ -58,9 +58,9 @@ function SolutionsList() {
             {leetcodeSolutions.map((blog) => (
               <div className="blog-item" key={blog.id}>
                 <div className="blog-thumb">
-                  <img src={leetcodeSolutionImage} alt="Leetcode Solution" />
+                  {/* <img src={leetcodeSolutionImage} alt="Leetcode Solution" /> */}
 
-                  {/* <img src={blog.image} alt="" /> */}
+                  <img src={`../../../leetcode/${blog.difficulty}`} alt="" />
                   <a href="#" className="category">
                     {blog.dataStructure}
                   </a>
