@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SolutionsData from "./SolutionsData";
-import { CiCalendar } from "react-icons/ci";
-import { FaRegComments } from "react-icons/fa";
+import axios from "axios";
+// import { CiCalendar } from "react-icons/ci";
+// import { FaRegComments } from "react-icons/fa";
 import leetcodeSolutionImage from "../../../assets/img/publicImages/leetcodesolution.png";
 
 function SolutionsList() {
+  const [leetcodeSolutions, setLeetcodeSolutions] = useState([]);
+
+  useEffect(() => {
+    const fetchSolutions = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/api/leetcodeSolutions"
+        );
+
+        if (
+          response.data &&
+          Array.isArray(response.data._embedded.leetcodeSolutions)
+        ) {
+          const solutionsWithId = response.data._embedded.leetcodeSolutions.map(
+            (leetcodesolution) => ({
+              ...leetcodesolution,
+              id: leetcodesolution._links.self.href.split("/").pop(), // Extract ID from URL
+            })
+          );
+
+          setLeetcodeSolutions(solutionsWithId);
+        } else {
+          console.error("Unexpected response format");
+        }
+      } catch (error) {
+        console.error("Error fetching diaries:", error);
+      }
+    };
+
+    fetchSolutions();
+  }, []);
+
   return (
     <>
       {/* <header className="masthead">
@@ -23,19 +55,19 @@ function SolutionsList() {
                 </p>
               </div> */}
           <div className="grid4">
-            {SolutionsData.map((blog) => (
+            {leetcodeSolutions.map((blog) => (
               <div className="blog-item" key={blog.id}>
                 <div className="blog-thumb">
                   <img src={leetcodeSolutionImage} alt="Leetcode Solution" />
 
                   {/* <img src={blog.image} alt="" /> */}
                   <a href="#" className="category">
-                    <p>1253534</p>
-                    {/* {blog.category} */}
+                    {blog.dataStructure}
                   </a>
                 </div>
                 <div className="blog-content">
-                  <div className="blog-meta">
+                  {/* TODO: see if I need to display dates here */}
+                  {/* <div className="blog-meta">
                     <ul className="ul-reset">
                       <li>
                         <i>
@@ -43,16 +75,21 @@ function SolutionsList() {
                         </i>
                         {blog.date}
                       </li>
-                      {/* <li>
+                      <li>
                         <i>
                           <FaRegComments size={20} />
                         </i>
                         Comment ({blog.commentCount})
-                      </li> */}
+                      </li>
                     </ul>
-                  </div>
+                  </div> */}
                   <h3 className="blog-title">
-                    <a href={blog.link}>{blog.title}</a>
+                    <Link
+                      to={`/leetcodeSolutions/${blog.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      {blog.title}
+                    </Link>
                   </h3>
                 </div>
               </div>

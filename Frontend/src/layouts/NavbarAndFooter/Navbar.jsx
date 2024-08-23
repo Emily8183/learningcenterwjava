@@ -38,7 +38,7 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <Link to={`/leetcode`} className="nav-link">
+              <Link to={`/api/leetcodeSolutions`} className="nav-link">
                 LeetCode
               </Link>
             </li>

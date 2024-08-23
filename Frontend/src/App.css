@@ -74,6 +74,7 @@ footer p {
   --tj-theme-secondary: #073305;
   --tj-theme-accent-1: #040e04;
   --tj-theme-accent-2: #140c1c;
+  --tj-white: #ffffff;
 }
 
 .header {
@@ -402,7 +403,7 @@ h1,
   font-size: inherit;
   font-weight: inherit;
 }
-.blog-item .blog-content .blog-title {
+.blog-item .blog-content .blog-title a {
   color: var(--tj-white);
   font-size: 20px;
   text-transform: capitalize;

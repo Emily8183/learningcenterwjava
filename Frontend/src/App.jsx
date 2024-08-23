@@ -30,7 +30,7 @@ function App() {
           <Route path="insights/:id" element={<Insights />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projectDiaries/:id" element={<ProjectDiary />} />
-          <Route path="/leetcode" element={<Leetcode />} />
+          <Route path="/leetcodeSolutions" element={<Leetcode />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
