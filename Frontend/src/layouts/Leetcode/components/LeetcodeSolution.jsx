@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function LeetcodeSolution() {
-  const { id } = useParams;
+  const { id } = useParams();
 
   const [leetcodeSolution, setLeetcodeSolution] = useState(null);
   const [loading, setLoading] = useState(null);
@@ -52,7 +52,7 @@ function LeetcodeSolution() {
               class="badge bg-secondary text-decoration-none link-light"
               href="#!"
             >
-              Link to project
+              {leetcodeSolution.dataStructure}
             </a>
           </header>
 
