@@ -6,7 +6,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="leetcodeSolution")
-public class leetcodeSolution extends Post{
+public class LeetcodeSolution extends Post{
 
     @Column(name = "dataStructure")
     private String dataStructure;
