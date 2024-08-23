@@ -8,6 +8,7 @@ import Contact from "./layouts/Contact/Contact";
 import Navbar from "./layouts/NavbarAndFooter/Navbar";
 import Footer from "./layouts/NavbarAndFooter/Footer";
 import ProjectDiary from "./layouts/Projects/components/ProjectDiary";
+import LeetcodeSolution from "./layouts/Leetcode/components/LeetcodeSolution";
 import {
   BrowserRouter as Router,
   Routes,
@@ -31,6 +32,7 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="projectDiaries/:id" element={<ProjectDiary />} />
           <Route path="/leetcodeSolutions" element={<Leetcode />} />
+          <Route path="leetcodeSolutions/:id" element={<LeetcodeSolution />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
