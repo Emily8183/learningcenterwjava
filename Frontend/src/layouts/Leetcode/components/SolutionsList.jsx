@@ -60,7 +60,9 @@ function SolutionsList() {
                 <div className="blog-thumb">
                   {/* <img src={leetcodeSolutionImage} alt="Leetcode Solution" /> */}
 
-                  <img src={`../../../leetcode/${blog.difficulty}`} alt="" />
+                  <img src={`../../../leetcode/${blog.imageURL}`} alt="" />
+
+                  {/* <img src={`../../../leetcode/LC704.png`} alt="" /> */}
                   <a href="#" className="category">
                     {blog.dataStructure}
                   </a>
