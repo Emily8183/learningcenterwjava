@@ -91,7 +91,12 @@ function Heros() {
           <div className="m-2">
             <div className="col-image-left-one"></div>
             <div className="mt-2">
-              <h1>Project Display</h1>
+              <Link
+                to="/projects"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <h1>Project Display</h1>
+              </Link>
               <p className="lead">
                 - Languages: JavaScript, TypeScript, Java
                 <br />
@@ -105,7 +110,12 @@ function Heros() {
           <div className="m-2">
             <div className="col-image-right"></div>
             <div className="mt-2">
-              <h1>LeetCode Solutions</h1>
+              <Link
+                to="/leetcode"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <h1>LeetCode Solutions</h1>
+              </Link>
               <p className="lead">
                 - Data Structures and Algorithms
                 <br />
@@ -119,7 +129,12 @@ function Heros() {
           <div className="m-2">
             <div className="col-image-left-two"></div>
             <div className="mt-2">
-              <h1>Professional Skills Q&A</h1>
+              <Link
+                to="/skills"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <h1>Professional Skills Q&A</h1>
+              </Link>
               <p className="lead">
                 - Ten years of experience in product development and project
                 management
