@@ -75,6 +75,8 @@ footer p {
   --tj-theme-accent-1: #040e04;
   --tj-theme-accent-2: #140c1c;
   --tj-white: #ffffff;
+  --tj-ff-heading: "Sora", sans-serif;
+  --tj-fw-bold: 700;
 }
 
 .header {
@@ -157,6 +159,24 @@ footer p {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+}
+
+.project-title {
+  font-family: var(--tj-ff-heading);
+  font-weight: var(--tj-fw-bold);
+  line-height: 1.2;
+  color: var(--tj-white);
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+.project-subtitle {
+  font-family: var(--tj-ff-heading);
+  font-weight: lighter;
+  line-height: 1.2;
+  color: var(--tj-white);
+  margin-bottom: 15px;
+  text-decoration: none;
 }
 
 /* .post-preview {

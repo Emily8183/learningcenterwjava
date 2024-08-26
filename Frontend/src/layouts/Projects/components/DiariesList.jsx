@@ -56,7 +56,7 @@ function DiariesList() {
                     <h3 className="portfolio-title">
                       <Link
                         to={`/projectDiaries/${projectDiary.id}`}
-                        className="post-link"
+                        className="project-title"
                       >
                         {projectDiary.title}
                       </Link>
@@ -65,7 +65,7 @@ function DiariesList() {
                     <h4>
                       <Link
                         to={`/projectDiaries/${projectDiary.id}`}
-                        className="post-link"
+                        className="project-subtitle"
                       >
                         {projectDiary.summary}
                       </Link>
