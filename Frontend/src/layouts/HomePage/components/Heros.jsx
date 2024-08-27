@@ -89,7 +89,7 @@ function Heros() {
       <div className="d-lg-none">
         <div className="container">
           <div className="m-2">
-            <div className="col-image-left-one"></div>
+            <div className="col-image-left-one img-fluid"></div>
             <div className="mt-2">
               <Link
                 to="/projects"
@@ -108,7 +108,7 @@ function Heros() {
             </div>
           </div>
           <div className="m-2">
-            <div className="col-image-right"></div>
+            <div className="col-image-right img-fluid"></div>
             <div className="mt-2">
               <Link
                 to="/leetcode"
@@ -127,7 +127,7 @@ function Heros() {
             </div>
           </div>
           <div className="m-2">
-            <div className="col-image-left-two"></div>
+            <div className="col-image-left-two img-fluid"></div>
             <div className="mt-2">
               <Link
                 to="/skills"

@@ -103,26 +103,39 @@ footer p {
   /* background-color: blue; */
   background-image: url("./assets/img/publicImages/project32.jpg");
   height: 30em !important;
-  background-size: 100%;
+  /* background-size: 100%; */
+  background-size: cover;
+  /* to make the images responsive */
+  background-position: center;
   border-radius: 35px;
   display: block;
 }
 
 .col-image-left-two {
-  /* background-color: blue; */
   background-image: url("./assets/img/publicImages/professional1.jpg");
   height: 30em !important;
-  background-size: 100%;
+  /* background-size: 100%; */
+  background-size: cover;
+  background-position: center;
   border-radius: 35px;
-  display: block;
 }
+
+/* @media (max-width: 768px) {
+  .col-image-left-two {
+    height: 20em; /* 在小屏幕上调整高度 */
+/* border-radius: 20px; 在小屏幕上调整圆角 */
+/* }
+} */
 
 .col-image-right {
   background-image: url("./assets/img/publicImages/leetcode5.jpg");
   height: 30em !important;
   border-radius: 35px;
-  background-size: 100%;
+  /* background-size: 100%; */
+  background-size: cover;
+  background-position: center;
   display: block;
+  object-fit: cover;
 }
 
 .lost-image {

@@ -1,6 +1,6 @@
 import React from "react";
 import PageBanner from "../../NavbarAndFooter/PageBanner";
-import { ReactTyped, Typed } from "react-typed";
+import { ReactTyped } from "react-typed";
 
 function HomePageBanner() {
   return (
@@ -17,16 +17,21 @@ function HomePageBanner() {
               Product Development | Full Stack Web Developer | Project
               Management
             </p>
+            <p>Understand the why, define the what, and execute the how.</p>
             <br></br>
             <p>
               <ReactTyped
                 strings={[
-                  "Understand the why, define the what, and execute the how.",
-                  "With my background and skills, I know why products matter and turn concepts into reality.",
+                  "With my background and skills, I know why products matter",
                 ]}
-                typeSpeed={100}
-                backSpeed={40}
-                loop
+                typeSpeed={50}
+              />
+              <br></br>
+              <ReactTyped
+                strings={["and can help you to turn concepts into reality."]}
+                typeSpeed={50}
+                startDelay={5000}
+                // loop
               />
             </p>
           </>
