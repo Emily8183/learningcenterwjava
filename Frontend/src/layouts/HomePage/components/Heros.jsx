@@ -84,7 +84,6 @@ function Heros() {
         </div>
       </div>
 
-      {/* TODO: update the Mobile views */}
       {/* Mobile Heros */}
       <div className="d-lg-none">
         <div className="container">

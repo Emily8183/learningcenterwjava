@@ -633,3 +633,26 @@ h1,
   grid-gap: 30px;
 }
 /* --------------   End: Portfolio Section --------------*/
+
+.homepage-profile-pic {
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  position: absolute;
+  right: -250px;
+  top: -15px;
+  /* border: 5px solid var(--tj-theme-secondary); */
+  border: 5px solid #609c24;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(15deg);
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.homepage-profile-pic:hover {
+  -webkit-transform: rotate(-8.29deg); /* Rotate on hover */
+  transform: rotate(-8.29deg); /* Rotate on hover */
+}

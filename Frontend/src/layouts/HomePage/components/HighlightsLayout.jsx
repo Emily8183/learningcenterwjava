@@ -16,15 +16,17 @@ function HighlightsLayout() {
                     style={{ marginBottom: "30px" }}
                   ></prop.icon>
 
-                  <Link
-                    to={prop.path}
-                    style={{
-                      color: "inherit",
-                      textDecoration: "inherit",
-                    }}
-                  >
-                    <h3>{prop.title}</h3>
-                  </Link>
+                  <div>
+                    <Link
+                      to={prop.path}
+                      style={{
+                        color: "inherit",
+                        textDecoration: "inherit",
+                      }}
+                    >
+                      <h3>{prop.title}</h3>
+                    </Link>
+                  </div>
 
                   <p className="lead mb-0">{prop.description}</p>
                 </div>
