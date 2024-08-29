@@ -12,18 +12,7 @@ function HomePageBanner() {
               <img
                 className="homepage-profile-pic"
                 src="../../../EmProfile.jpg"
-                alt="Emily Lin"
-
-                // style={{
-                //   borderRadius: "50%",
-                //   width: "100px",
-                //   height: "100px",
-                //   objectFit: "cover",
-                //   marginBottom: "10px",
-                //   position: "absolute",
-                //   right: "-250px",
-                //   top: "-15px",
-                // }}
+                alt="Em Profile Img"
               />
               <h1>Emily Lin</h1>
             </div>

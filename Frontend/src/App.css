@@ -645,14 +645,15 @@ h1,
   top: -15px;
   /* border: 5px solid var(--tj-theme-secondary); */
   border: 5px solid #609c24;
-  -webkit-transform: rotate(0deg);
+  -webkit-transform: rotate(15deg);
   transform: rotate(15deg);
   -webkit-transition: 0.3s ease-in-out;
+  /* ease-in-out:在发生旋转时平滑地过渡 */
   -o-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 
 .homepage-profile-pic:hover {
-  -webkit-transform: rotate(-8.29deg); /* Rotate on hover */
-  transform: rotate(-8.29deg); /* Rotate on hover */
+  -webkit-transform: rotate(45deg); /* Rotate on hover */
+  transform: rotate(45deg); /* Rotate on hover */
 }
