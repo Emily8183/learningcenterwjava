@@ -71,7 +71,10 @@ function LeetcodeSolution() {
 
           {/* Post content */}
           <section className="mb-5">
-            <p className="fs-5 mb-4">{leetcodeSolution.content}</p>
+            <p className="fs-5 mb-4" style={{ whiteSpace: "pre-line" }}>
+              {leetcodeSolution.content.replace(/\\n/g, "\n")}
+              {/* to change line in sql */}
+            </p>
             {/* TODO: can add some subtitles here */}
           </section>
         </article>
