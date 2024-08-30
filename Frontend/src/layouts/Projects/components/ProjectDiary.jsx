@@ -50,33 +50,33 @@ function ProjectDiary() {
 
   return (
     <>
-      <div class="container mt-5">
+      <div className="container mt-5">
         <article>
           <header className="mb-4">
             {/* Post title */}
-            <h1 class="fw-bolder mb-1">{projectDiary.title}</h1>
-            <div class="text-muted fst-italic mb-2">
+            <h1 className="fw-bolder mb-1">{projectDiary.title}</h1>
+            <div className="text-muted fst-italic mb-2">
               Posted on {projectDiary.date}
             </div>
             <a
-              class="badge bg-secondary text-decoration-none link-light"
+              className="badge bg-secondary text-decoration-none link-light"
               href="#!"
             >
               Link to project
             </a>
           </header>
 
-          <figure class="mb-4">
+          <figure className="mb-4">
             <img
-              class="img-fluid rounded"
+              className="img-fluid rounded"
               src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
               alt="..."
             />
           </figure>
 
           {/* Post content */}
-          <section class="mb-5">
-            <p class="fs-5 mb-4">{projectDiary.content}</p>
+          <section className="mb-5">
+            <p className="fs-5 mb-4">{projectDiary.content}</p>
             {/* TODO: can add some subtitles here */}
           </section>
         </article>
