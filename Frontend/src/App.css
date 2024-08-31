@@ -659,17 +659,6 @@ h1,
 
 /* --------------  Article display --------------*/
 
-.container,
-.container-fluid,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
-  margin-right: 0 !important;
-  /* temporarily override bootstrap's .container class to make the content displayed in center */
-}
-
 @media (min-width: 576px) {
   .container-sm,
   .container {
