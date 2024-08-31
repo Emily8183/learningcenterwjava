@@ -9,7 +9,7 @@ function PageBanner({ title, content }) {
             <div className="col-xl-10">
               <div className="text-center text-white">
                 <h1 className="mb-3">{title}</h1>
-                <p className="fs-4 mb-4">{content}</p>
+                <div className="fs-4 mb-4">{content}</div>
               </div>
             </div>
           </div>

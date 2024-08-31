@@ -29,9 +29,10 @@ function LeetcodePageBanner() {
               Turns out there is way more fun than I thought, and I am learning
               a ton along the way.
             </p>
+
             <p>
-              More features will be added to this page.{" "}
-              <b style={{ color: "#609c24" }}>Stay tuned!</b>
+              More features will be added to this page.
+              <b style={{ color: "#609c24" }}> Stay tuned!</b>
             </p>
             <br></br>
             <p>
