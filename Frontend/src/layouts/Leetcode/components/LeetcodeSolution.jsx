@@ -41,43 +41,47 @@ function LeetcodeSolution() {
   return (
     <>
       <div className="container mt-5">
-        <article>
-          <header className="mb-4">
-            {/* Post title */}
-            <h1 className="fw-bolder mb-1">{leetcodeSolution.title}</h1>
-            <div className="text-muted fst-italic mb-2">
-              Posted on {leetcodeSolution.date}
-            </div>
-            <a
-              className="badge bg-secondary text-decoration-none link-light"
-              href="#!"
-            >
-              {leetcodeSolution.dataStructure}
-            </a>
-          </header>
+        <div class="row">
+          <div class="col-lg-8">
+            <article>
+              <header className="mb-4">
+                {/* Post title */}
+                <h1 className="fw-bolder mb-1">{leetcodeSolution.title}</h1>
+                <div className="text-muted fst-italic mb-2">
+                  Posted on {leetcodeSolution.date}
+                </div>
+                <a
+                  className="badge bg-secondary text-decoration-none link-light"
+                  href="#!"
+                >
+                  {leetcodeSolution.dataStructure}
+                </a>
+              </header>
 
-          <figure className="mb-4">
-            <img
-              className="img-fluid rounded"
-              src={`../../../leetcode/${leetcodeSolution.imageURL}`}
-              alt=""
-            />
-            {/* <img
+              <figure className="mb-4">
+                <img
+                  className="img-fluid rounded"
+                  src={`../../../leetcode/${leetcodeSolution.imageURL}`}
+                  alt=""
+                />
+                {/* <img
               className="img-fluid rounded"
               src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
               alt="..."
             /> */}
-          </figure>
+              </figure>
 
-          {/* Post content */}
-          <section className="mb-5">
-            <p className="fs-5 mb-4" style={{ whiteSpace: "pre-line" }}>
-              {leetcodeSolution.content.replace(/\\n/g, "\n")}
-              {/* to change line in sql */}
-            </p>
-            {/* TODO: can add some subtitles here */}
-          </section>
-        </article>
+              {/* Post content */}
+              <section className="mb-5">
+                <p className="fs-5 mb-4" style={{ whiteSpace: "pre-line" }}>
+                  {leetcodeSolution.content.replace(/\\n/g, "\n")}
+                  {/* to change line in sql */}
+                </p>
+                {/* TODO: can add some subtitles here */}
+              </section>
+            </article>
+          </div>
+        </div>
       </div>
     </>
   );
