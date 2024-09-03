@@ -1,6 +1,7 @@
 import React from "react";
 import PageBanner from "../../NavbarAndFooter/PageBanner";
 import { ReactTyped } from "react-typed";
+import { FaRegHandPointRight } from "react-icons/fa";
 
 function LeetcodePageBanner() {
   return (
@@ -20,6 +21,16 @@ function LeetcodePageBanner() {
         }
         content={
           <>
+            <p style={{ fontSize: "20px", color: "#609c24" }}>
+              (Click here to visit my <FaRegHandPointRight />
+              <a
+                href="https://github.com/Emily8183/leetcodeWithJava"
+                style={{ color: "#609c24", fontWeight: "bold" }}
+              >
+                GitHub repo
+              </a>
+              . Stay tuned for more features coming soon!)
+            </p>
             <p>
               I started my LeetCode journey in June 2024 to sharpen my coding
               skills.
@@ -30,10 +41,6 @@ function LeetcodePageBanner() {
               a ton along the way.
             </p>
 
-            <p>
-              More features will be added to this page.
-              <b style={{ color: "#609c24" }}> Stay tuned!</b>
-            </p>
             <br></br>
             <p>
               <ReactTyped
