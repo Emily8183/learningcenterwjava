@@ -21,11 +21,13 @@ function LeetcodePageBanner() {
         }
         content={
           <>
-            <p style={{ fontSize: "20px", color: "#609c24" }}>
+            <p
+              style={{ fontSize: "20px", color: "#b43803", fontWeight: "bold" }}
+            >
               (Click here to visit my <FaRegHandPointRight />
               <a
                 href="https://github.com/Emily8183/leetcodeWithJava"
-                style={{ color: "#609c24", fontWeight: "bold" }}
+                style={{ color: "#b43803" }}
               >
                 GitHub repo
               </a>
