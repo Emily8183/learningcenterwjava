@@ -17,4 +17,7 @@ public class LeetcodeSolution extends Post{
     @Column(name = "difficulty")
     private String difficulty;
 
+    @Column(name = "imageURL")
+    private String imageURL;
+
 }
