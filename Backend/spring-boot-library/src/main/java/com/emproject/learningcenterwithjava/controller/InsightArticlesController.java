@@ -33,9 +33,10 @@ public class InsightArticlesController {
                 .collect(Collectors.toList());
 
         return ResponseEntity.ok(CollectionModel.of(insightArticles,
-                linkTo(methodOn(LeetcodeSolutionController.class)getAllInsightArticles()).withSelfRel()));
+                linkTo(methodOn(InsightArticlesController.class).getAllInsightArticles()).withSelfRel()));
     }
 
+    @GetMapping("/{id}")
     public ResponseEntity<InsightArticles> getInsightArticlesById(@PathVariable Long id) {
         Optional<InsightArticles> insightArticles = insightArticlesRepository.findById(id);
         return insightArticles.map(ResponseEntity::ok).orElseGet(()->ResponseEntity.notFound().build());
