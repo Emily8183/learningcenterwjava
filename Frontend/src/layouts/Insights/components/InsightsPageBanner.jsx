@@ -8,7 +8,7 @@ function InsightsPageBanner() {
         title="Collected Thoughts"
         content={
           <>
-            <p>Interesting findings from my latest readings & group meet-ups</p>
+            <p>New Findings from My Recent Tech Reads & Group Discussions</p>
           </>
         }
       />
@@ -17,4 +17,3 @@ function InsightsPageBanner() {
 }
 
 export default InsightsPageBanner;
-p;
