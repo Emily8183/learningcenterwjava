@@ -42,7 +42,7 @@ function LeetcodeSolution() {
     <>
       <div className="container mt-5">
         <div class="row">
-          <div class="col-lg-8">
+          <div class="col-lg-10">
             <article>
               <header className="mb-4">
                 {/* Post title */}

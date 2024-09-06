@@ -41,31 +41,35 @@ function InsightArticle() {
   return (
     <>
       <div className="container mt-5">
-        <article>
-          <header className="mb-4">
-            {/* Post title */}
-            <h1 className="fw-bolder mb-1">{insightArticle.title}</h1>
-            <div className="text-muted fst-italic mb-2">
-              Posted on {insightArticle.date}
-            </div>
-          </header>
+        <div class="row">
+          <div class="col-lg-10">
+            <article>
+              <header className="mb-4">
+                {/* Post title */}
+                <h1 className="fw-bolder mb-1">{insightArticle.title}</h1>
+                <div className="text-muted fst-italic mb-2">
+                  Posted on {insightArticle.date}
+                </div>
+              </header>
 
-          <figure className="mb-4">
-            <img
-              className="img-fluid rounded"
-              src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
-              alt="..."
-            />
-          </figure>
+              <figure className="mb-4">
+                <img
+                  className="img-fluid rounded"
+                  src={`../../../insights/${insightArticle.imageURL}`}
+                  alt="..."
+                />
+              </figure>
 
-          {/* Post content */}
-          <section className="mb-5">
-            <p className="fs-5 mb-4" style={{ whiteSpace: "pre-line" }}>
-              {insightArticle.content.replace(/\\n/g, "\n")}
-            </p>
-            {/* TODO: can add some subtitles here */}
-          </section>
-        </article>
+              {/* Post content */}
+              <section className="mb-5">
+                <p className="fs-5 mb-4" style={{ whiteSpace: "pre-line" }}>
+                  {insightArticle.content.replace(/\\n/g, "\n")}
+                </p>
+                {/* TODO: can add some subtitles here */}
+              </section>
+            </article>
+          </div>
+        </div>
       </div>
     </>
   );
