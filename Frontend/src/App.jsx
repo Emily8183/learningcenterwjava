@@ -9,6 +9,8 @@ import Navbar from "./layouts/NavbarAndFooter/Navbar";
 import Footer from "./layouts/NavbarAndFooter/Footer";
 import ProjectDiary from "./layouts/Projects/components/ProjectDiary";
 import LeetcodeSolution from "./layouts/Leetcode/components/LeetcodeSolution";
+import InsightArticle from "./layouts/Insights/components/InsightArticle";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,8 +29,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="home" element={<HomePage />} />
-          <Route path="insights" element={<Insights />} />
-          <Route path="insights/:id" element={<Insights />} />
+          <Route path="insightArticles" element={<Insights />} />
+          <Route path="insightArticles/:id" element={<InsightArticle />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projectDiaries/:id" element={<ProjectDiary />} />
           <Route path="/leetcodeSolutions" element={<Leetcode />} />
