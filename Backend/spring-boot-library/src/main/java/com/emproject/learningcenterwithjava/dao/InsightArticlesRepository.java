@@ -1,7 +1,7 @@
 package com.emproject.learningcenterwithjava.dao;
 
-import com.emproject.learningcenterwithjava.entity.InsightArticles;
+import com.emproject.learningcenterwithjava.entity.InsightArticle;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface InsightArticlesRepository extends JpaRepository<InsightArticles, Long> {
+public interface InsightArticlesRepository extends JpaRepository<InsightArticle, Long> {
 }

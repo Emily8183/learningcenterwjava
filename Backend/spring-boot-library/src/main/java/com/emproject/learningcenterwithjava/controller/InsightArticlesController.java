@@ -1,7 +1,7 @@
 package com.emproject.learningcenterwithjava.controller;
 
 import com.emproject.learningcenterwithjava.dao.InsightArticlesRepository;
-import com.emproject.learningcenterwithjava.entity.InsightArticles;
+import com.emproject.learningcenterwithjava.entity.InsightArticle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
@@ -26,8 +26,8 @@ public class InsightArticlesController {
     private InsightArticlesRepository insightArticlesRepository;
 
     @GetMapping("")
-    public ResponseEntity<CollectionModel<EntityModel<InsightArticles>>> getAllInsightArticles() {
-        List<EntityModel<InsightArticles>> insightArticles = insightArticlesRepository.findAll().stream()
+    public ResponseEntity<CollectionModel<EntityModel<InsightArticle>>> getAllInsightArticles() {
+        List<EntityModel<InsightArticle>> insightArticles = insightArticlesRepository.findAll().stream()
                 .map(insightArticle -> EntityModel.of(insightArticle,
                         linkTo(methodOn(InsightArticlesController.class).getInsightArticlesById(insightArticle.getId())).withSelfRel()))
                 .collect(Collectors.toList());
@@ -37,8 +37,8 @@ public class InsightArticlesController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<InsightArticles> getInsightArticlesById(@PathVariable Long id) {
-        Optional<InsightArticles> insightArticles = insightArticlesRepository.findById(id);
+    public ResponseEntity<InsightArticle> getInsightArticlesById(@PathVariable Long id) {
+        Optional<InsightArticle> insightArticles = insightArticlesRepository.findById(id);
         return insightArticles.map(ResponseEntity::ok).orElseGet(()->ResponseEntity.notFound().build());
     }
 }

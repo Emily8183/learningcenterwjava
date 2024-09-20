@@ -192,17 +192,13 @@ footer p {
   text-decoration: none;
 }
 
-/* .post-preview {
-  color: green;
-}
-
-.post-subtitle {
+/* .post-subtitle {
   color: orange;
 } */
 
-/* .post-title {
-  color: red;
-} */
+.post-title {
+  padding-top: 40px;
+}
 
 .post-preview > .post-link {
   color: #212529;
