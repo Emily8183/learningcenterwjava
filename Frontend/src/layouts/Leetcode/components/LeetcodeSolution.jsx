@@ -41,8 +41,8 @@ function LeetcodeSolution() {
   return (
     <>
       <div className="container mt-5">
-        <div class="row">
-          <div class="col-lg-10">
+        <div className="row">
+          <div className="col-lg-10">
             <article>
               <header className="mb-4">
                 {/* Post title */}

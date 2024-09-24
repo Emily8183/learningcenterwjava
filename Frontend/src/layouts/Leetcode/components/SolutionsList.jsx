@@ -75,12 +75,36 @@ function SolutionsList() {
     <>
       <section className="blog-section">
         <div className="container">
+          {/* Blog Posts from my SQL*/}
           <div className="grid4">
-            {/* Blog Posts Section */}
-            <div>
-              {/* {leetcodePosts.map((post, index) => (
-                <LeetcodePost key={index} {...post} />
-              ))} */}
+            {leetcodeSolutions.map((blog) => (
+              <div className="blog-item" key={blog.id}>
+                <div className="blog-thumb">
+                  <img src={`../../../leetcode/${blog.imageURL}`} alt="" />
+
+                  {/* <img src={`../../../leetcode/LC704.png`} alt="" /> */}
+                  <a href="#" className="category">
+                    {blog.dataStructure}
+                  </a>
+                </div>
+                <div className="blog-content">
+                  {/* TODO: see if I need to display dates here */}
+                  <h3 className="blog-title">
+                    <Link
+                      to={`/leetcodeSolutions/${blog.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      {blog.title}
+                    </Link>
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            {/* Blog Posts from Medium*/}
+            <div className="grid4">
               {leetcodePosts.map((post, index) => (
                 <div className="blog-item" key={index}>
                   <div className="blog-thumb">
@@ -90,32 +114,6 @@ function SolutionsList() {
                     <h3 className="blog-title">
                       <Link to={post.link} style={{ textDecoration: "none" }}>
                         {post.title}
-                      </Link>
-                    </h3>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div>
-              {leetcodeSolutions.map((blog) => (
-                <div className="blog-item" key={blog.id}>
-                  <div className="blog-thumb">
-                    <img src={`../../../leetcode/${blog.imageURL}`} alt="" />
-
-                    {/* <img src={`../../../leetcode/LC704.png`} alt="" /> */}
-                    <a href="#" className="category">
-                      {blog.dataStructure}
-                    </a>
-                  </div>
-                  <div className="blog-content">
-                    {/* TODO: see if I need to display dates here */}
-                    <h3 className="blog-title">
-                      <Link
-                        to={`/leetcodeSolutions/${blog.id}`}
-                        style={{ textDecoration: "none" }}
-                      >
-                        {blog.title}
                       </Link>
                     </h3>
                   </div>
