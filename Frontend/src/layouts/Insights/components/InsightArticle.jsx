@@ -4,7 +4,6 @@ import axios from "axios";
 
 function InsightArticle() {
   const { id } = useParams();
-
   const [insightArticle, setInsightArticle] = useState(null);
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
