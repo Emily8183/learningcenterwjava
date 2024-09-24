@@ -320,6 +320,7 @@ h1,
   position: relative;
   z-index: 1;
   height: 300px;
+  margin-bottom: 40px;
 }
 .blog-section .blog-item .blog-thumb {
   overflow: hidden;
@@ -402,7 +403,7 @@ h1,
   opacity: 1;
 }
 .blog-item .blog-meta {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .blog-meta ul {
   display: flex;
