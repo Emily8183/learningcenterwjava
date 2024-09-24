@@ -44,14 +44,23 @@ function SolutionsList() {
         );
         const data = await response.json();
         const items = data.items || [];
-        // 提取 description 中的 img src
-        const updatedItems = items.map((post) => {
-          const coverImageMatch = post.description.match(
-            /<img[^>]+src="([^">]+)"/
-          );
-          const coverImage = coverImageMatch ? coverImageMatch[1] : null;
-          return { ...post, coverImage };
-        });
+
+        const updatedItems = items
+          // 提取 description 中的 img src
+          .map((post) => {
+            const coverImageMatch = post.description.match(
+              /<img[^>]+src="([^">]+)"/
+            );
+            const coverImage = coverImageMatch ? coverImageMatch[1] : null;
+            return { ...post, coverImage };
+          })
+          .filter((post) => {
+            //check if the title has "LeetCode"
+            // const hasLeetCode = /leetcode/i.test(post.title);
+            //check if the title is all in English or contains symbols as below
+            const isEnglishTitle = /^[A-Za-z\s.,':!?"()-]*$/.test(post.title);
+            return isEnglishTitle;
+          });
 
         setLeetcodePosts(updatedItems);
       } catch (error) {
@@ -61,15 +70,6 @@ function SolutionsList() {
     };
     fetchBlogPosts();
   }, []);
-
-  // const LeetcodePost = ({ thumbnail, title, link, index }) => (
-  //   <a href={link} target="_blank">
-  //     <div>
-  //       <img src={post["thumbnail"]} alt={title} loading="loading" />
-  //       <p>{title}</p>
-  //     </div>
-  //   </a>
-  // );
 
   return (
     <>
@@ -87,7 +87,11 @@ function SolutionsList() {
                     <img src={post.coverImage} alt="" />
                   </div>
                   <div className="blog-content">
-                    <h3 className="blog-title">{post.title}</h3>
+                    <h3 className="blog-title">
+                      <Link to={post.link} style={{ textDecoration: "none" }}>
+                        {post.title}
+                      </Link>
+                    </h3>
                   </div>
                 </div>
               ))}
