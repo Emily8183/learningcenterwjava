@@ -44,7 +44,16 @@ function SolutionsList() {
         );
         const data = await response.json();
         const items = data.items || [];
-        setLeetcodePosts(items);
+        // 提取 description 中的 img src
+        const updatedItems = items.map((post) => {
+          const coverImageMatch = post.description.match(
+            /<img[^>]+src="([^">]+)"/
+          );
+          const coverImage = coverImageMatch ? coverImageMatch[1] : null;
+          return { ...post, coverImage };
+        });
+
+        setLeetcodePosts(updatedItems);
       } catch (error) {
         console.error("Error fetching blog posts:", error);
         setBlogLoading(false);
@@ -53,14 +62,14 @@ function SolutionsList() {
     fetchBlogPosts();
   }, []);
 
-  const LeetcodePost = ({ thumbnail, title, link, index }) => (
-    <a href={link} target="_blank">
-      <div>
-        <img src={thumbnail} alt={title} loading="lazy" />
-        <p>{title}</p>
-      </div>
-    </a>
-  );
+  // const LeetcodePost = ({ thumbnail, title, link, index }) => (
+  //   <a href={link} target="_blank">
+  //     <div>
+  //       <img src={post["thumbnail"]} alt={title} loading="loading" />
+  //       <p>{title}</p>
+  //     </div>
+  //   </a>
+  // );
 
   return (
     <>
@@ -69,8 +78,18 @@ function SolutionsList() {
           <div className="grid4">
             {/* Blog Posts Section */}
             <div>
-              {leetcodePosts.map((post, index) => (
+              {/* {leetcodePosts.map((post, index) => (
                 <LeetcodePost key={index} {...post} />
+              ))} */}
+              {leetcodePosts.map((post, index) => (
+                <div className="blog-item" key={index}>
+                  <div className="blog-thumb">
+                    <img src={post.coverImage} alt="" />
+                  </div>
+                  <div className="blog-content">
+                    <h3 className="blog-title">{post.title}</h3>
+                  </div>
+                </div>
               ))}
             </div>
 
