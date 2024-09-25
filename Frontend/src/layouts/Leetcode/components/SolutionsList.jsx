@@ -40,7 +40,7 @@ function SolutionsList() {
     const fetchBlogPosts = async () => {
       try {
         const response = await fetch(
-          "https://api.rss2json.com/v1/api.json?rss_url=http://medium.com/feed/@emily.zy.lin"
+          "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@emily.zy.lin"
         );
         const data = await response.json();
         const items = data.items || [];
