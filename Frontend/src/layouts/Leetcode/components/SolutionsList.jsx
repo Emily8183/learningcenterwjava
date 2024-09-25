@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+function decodeHtmlEntities(str) {
+  return str.replace(/&amp;/g, "&");
+}
+
 function SolutionsList() {
   const [leetcodeSolutions, setLeetcodeSolutions] = useState([]);
   const [leetcodePosts, setLeetcodePosts] = useState([]);
@@ -52,13 +56,15 @@ function SolutionsList() {
               /<img[^>]+src="([^">]+)"/
             );
             const coverImage = coverImageMatch ? coverImageMatch[1] : null;
-            return { ...post, coverImage };
+
+            //decode &amp in title
+            const decodedTitle = decodeHtmlEntities(post.title);
+
+            return { ...post, coverImage, title: decodedTitle };
           })
           .filter((post) => {
-            //check if the title has "LeetCode"
-            const hasLeetCode = /leetcode/i.test(post.title);
-            //check if the title is all in English or contains symbols as below
-            const isEnglishTitle = /^[A-Za-z\s.,':!?"()-]*$/.test(post.title);
+            const hasLeetCode = /leetcode/i.test(post.categories);
+            const isEnglishTitle = /english/i.test(post.categories);
             return hasLeetCode && isEnglishTitle;
           });
 

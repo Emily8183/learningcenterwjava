@@ -20,7 +20,7 @@ function Heros() {
                 to="/projects"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                <h1>Project Display</h1>
+                <h1>Project Experience</h1>
               </Link>
               <p className="lead">
                 - Languages: JavaScript, TypeScript, Java
@@ -38,7 +38,7 @@ function Heros() {
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
             <div className="ml-2">
               <Link
-                to="/leetcode"
+                to="/leetcodeSolutions"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <h1>LeetCode Solutions</h1>
@@ -69,7 +69,8 @@ function Heros() {
                 to="/skills"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                <h1>Professional Skills Q&A</h1>
+                {/* TODO: change to "Professional Skills & Q&A" */}
+                <h1>Professional Skills</h1>
               </Link>
               <p className="lead">
                 - Ten years of experience in product development and project
@@ -110,7 +111,7 @@ function Heros() {
             <div className="col-image-right img-fluid"></div>
             <div className="mt-2">
               <Link
-                to="/leetcode"
+                to="/leetcodeSolutions"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <h1>LeetCode Solutions</h1>
@@ -132,7 +133,8 @@ function Heros() {
                 to="/skills"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                <h1>Professional Skills Q&A</h1>
+                {/* TODO: change to "Professional Skills & Q&A" */}
+                <h1>Professional Skills</h1>
               </Link>
               <p className="lead">
                 - Ten years of experience in product development and project
