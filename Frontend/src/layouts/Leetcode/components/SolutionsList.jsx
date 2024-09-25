@@ -56,10 +56,10 @@ function SolutionsList() {
           })
           .filter((post) => {
             //check if the title has "LeetCode"
-            // const hasLeetCode = /leetcode/i.test(post.title);
+            const hasLeetCode = /leetcode/i.test(post.title);
             //check if the title is all in English or contains symbols as below
             const isEnglishTitle = /^[A-Za-z\s.,':!?"()-]*$/.test(post.title);
-            return isEnglishTitle;
+            return hasLeetCode && isEnglishTitle;
           });
 
         setLeetcodePosts(updatedItems);
