@@ -49,7 +49,7 @@ function Footer() {
             </li>
             {/* TODO: insert the hyperlink of xiaohongshu*/}
             <li className="list-inline-item me-4">
-              <a href="#!">
+              <a href="https://www.xiaohongshu.com/user/profile/62563076000000000d03007c">
                 <i>
                   <SiXiaohongshu size={80} style={{ color: "gray" }} />
                 </i>
