@@ -10,13 +10,13 @@ const HighlightsData = [
     description:
       "Interesting findings from my latest readings & group meet-ups",
     image: "https://picsum.photos/id/237/",
-    path: "/insights",
+    path: "/insightArticles",
   },
 
   {
     id: 2,
     icon: PiNotebookDuotone,
-    title: "Project Diaries",
+    title: "Project Journals",
     description:
       "Project experiences & achievements (front-end, back-end, and SQL)",
     image: "https://picsum.photos/id/237/",

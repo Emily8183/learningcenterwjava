@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 // can import the image in this file too
 // import image4 from "../../../assets/img/publicImages/image4.jpg";
 
-// TODO：页面尺尺寸变小后,显示出问题
-
 function Heros() {
   return (
     <div>

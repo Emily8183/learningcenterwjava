@@ -5,10 +5,12 @@ function InsightsPageBanner() {
   return (
     <>
       <PageBanner
-        title="Collected Thoughts"
+        title="Coffee Chat about Tech"
         content={
           <>
+            <br></br>
             <p>New Findings from My Recent Tech Reads & Group Discussions</p>
+            <p>Grab a coffee and enjoy your reading! 😊</p>
           </>
         }
       />

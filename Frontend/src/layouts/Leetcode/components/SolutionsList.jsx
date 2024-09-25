@@ -7,8 +7,8 @@ function decodeHtmlEntities(str) {
 }
 
 function SolutionsList() {
-  const [leetcodeSolutions, setLeetcodeSolutions] = useState([]);
-  const [leetcodePosts, setLeetcodePosts] = useState([]);
+  const [leetcodeSolutions, setLeetcodeSolutions] = useState([]); //SQL
+  const [leetcodePosts, setLeetcodePosts] = useState([]); //Medium
 
   useEffect(() => {
     const fetchSolutions = async () => {
@@ -71,7 +71,7 @@ function SolutionsList() {
         setLeetcodePosts(updatedItems);
       } catch (error) {
         console.error("Error fetching blog posts:", error);
-        setBlogLoading(false);
+        // setBlogLoading(false);
       }
     };
     fetchBlogPosts();
