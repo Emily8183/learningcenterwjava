@@ -21,37 +21,20 @@ function LeetcodePageBanner() {
         }
         content={
           <>
-            <p
-              style={{ fontSize: "20px", color: "#b43803", fontWeight: "bold" }}
-            >
+            <p style={{ fontSize: "20px" }}>
               (Click here to visit my <FaRegHandPointRight />
               <a
                 href="https://github.com/Emily8183/leetcodeWithJava"
-                style={{ color: "#b43803" }}
+                style={{ color: "yellow" }}
               >
                 GitHub repo
               </a>
               . Stay tuned for more features coming soon!)
             </p>
-            <p>
-              I started my LeetCode journey in June 2024 to sharpen my coding
-              skills.
-            </p>
-
-            <p>
-              Turns out there is way more fun than I thought, and I am learning
-              a ton along the way.
-            </p>
 
             <br></br>
-            <p>
-              <ReactTyped
-                strings={[
-                  "A journey of a thousand miles begins with a single step.",
-                ]}
-                typeSpeed={50}
-              />
-            </p>
+            <p>A journey of a thousand miles begins with a single step.</p>
+            <p>- Lao Tzu</p>
           </>
         }
       />

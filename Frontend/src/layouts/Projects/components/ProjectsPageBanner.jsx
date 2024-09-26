@@ -18,7 +18,7 @@ function ProjectsPageBanner() {
             <p>
               <ReactTyped
                 strings={[
-                  "Translation: I hear, and I forget. I see, and I remember. I do, and I understand.    - Xun Zi",
+                  "Translation: I hear, and I forget. I see, and I remember. I do, and I understand.   - Xun Tzu",
                 ]}
                 typeSpeed={50}
               />
