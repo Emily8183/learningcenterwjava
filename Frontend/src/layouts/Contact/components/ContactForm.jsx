@@ -55,12 +55,12 @@ function ContactForm() {
                     value="contactform-v1"
                   />
 
-                  <p class="hidden">
+                  <div hidden>
                     <label>
                       Don't fill this out if you're human:
                       <input name="bot-field" />
                     </label>
-                  </p>
+                  </div>
 
                   <div className="form-floating">
                     <input
