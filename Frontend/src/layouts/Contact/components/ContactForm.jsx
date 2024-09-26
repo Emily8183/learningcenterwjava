@@ -18,16 +18,15 @@ function ContactForm() {
     const form = e.target;
     const formData = new FormData(form);
 
-    try {
-      await axios.post("/contact", new URLSearchParams(formData).toString(), {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
-      alert("Thank you for being liasied with me!");
-    } catch (error) {
-      alert("Oops! There's an error.");
-    }
+    fetch("/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        alert("Thank you for contacting me!");
+      })
+      .catch((error) => alert("Oops! There's an error."));
   };
 
   return (
