@@ -25,21 +25,14 @@ function ContactForm() {
                 <form
                   id="contactForm"
                   name="contactform v1"
-                  method="post"
+                  method="POST"
                   data-netlify="true"
                   onSubmit="submit"
                 >
                   <div className="form-floating">
                     <input
-                      type="hidden"
-                      name="form-name"
-                      value="contactform v1"
-                    />
-
-                    <input
                       className="form-control"
                       id="name"
-                      name="full-name"
                       type="text"
                       placeholder="Enter your name..."
                       //   data-sb-validations="required"
@@ -82,7 +75,7 @@ function ContactForm() {
                       <td>Subject</td>
                       <td>
                         {/* <select value={selectedValue} onChange={handleSelectChange}> */}
-                        <select>
+                        <select name="subject[]">
                           <option value="Category 1">
                             Would like to build a project together
                           </option>
@@ -100,7 +93,7 @@ function ContactForm() {
                     <textarea
                       className="form-control"
                       id="message"
-                      name="comments"
+                      name="message"
                       placeholder="Enter your message here..."
                       style={{ height: "12rem" }}
                       //   data-sb-validations="required"
