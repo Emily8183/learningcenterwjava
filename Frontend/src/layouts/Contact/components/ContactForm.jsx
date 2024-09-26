@@ -1,6 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 
 function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value }); //当用户输入新数据（value)，相应字段更新为用户输入的值
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); //在不刷新页面的情况下上传（处理）表单数据
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      await axios.post("/", new URLSearchParams(formData).toString(), {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+      alert("Thank you for being liasied with me!");
+    } catch (error) {
+      alert("Oops! There's an error.");
+    }
+  };
+
   return (
     <>
       <main className="mb-4">
@@ -27,14 +56,17 @@ function ContactForm() {
                   name="contactform v1"
                   method="POST"
                   data-netlify="true"
-                  onSubmit="submit"
+                  onSubmit={handleSubmit}
                 >
+                  <input type="hidden" name="contactform v1" value="contact" />
                   <div className="form-floating">
                     <input
                       className="form-control"
                       id="name"
                       type="text"
+                      name="name"
                       placeholder="Enter your name..."
+                      onChange={handleChange}
                       //   data-sb-validations="required"
                     />
                     <label for="name">Name</label>
@@ -52,6 +84,7 @@ function ContactForm() {
                       type="email"
                       name="email"
                       placeholder="Enter your email..."
+                      onChange={handleChange}
                       //   data-sb-validations="required,email"
                     />
                     <label htmlFor="email">Email address</label>
@@ -75,7 +108,7 @@ function ContactForm() {
                       <td>Subject</td>
                       <td>
                         {/* <select value={selectedValue} onChange={handleSelectChange}> */}
-                        <select name="subject[]">
+                        <select name="subject" onChange={handleChange}>
                           <option value="Category 1">
                             Would like to build a project together
                           </option>
@@ -83,7 +116,7 @@ function ContactForm() {
                             Discuss about Leetcode solutions
                           </option>
                           <option value="Category 3">Job opportunity</option>
-                          <option value="Category 3">Others</option>
+                          <option value="Category 4">Others</option>
                         </select>
                       </td>
                     </tr>
@@ -95,6 +128,7 @@ function ContactForm() {
                       id="message"
                       name="message"
                       placeholder="Enter your message here..."
+                      onChange={handleChange}
                       style={{ height: "12rem" }}
                       //   data-sb-validations="required"
                     ></textarea>
