@@ -29,20 +29,12 @@ function HomePageBanner() {
               <b style={{ color: "#609c24" }}>WHAT</b>, and execute the{" "}
               <b style={{ color: "#609c24" }}>HOW</b>.
             </p>
-            <br></br>
+
             <p>
               <ReactTyped
-                strings={[
-                  "With my background and skills, I know why products matter",
-                ]}
+                strings={["I can help you to turn fantasy into reality!"]}
                 typeSpeed={50}
                 showCursor={false}
-              />
-              <br></br>
-              <ReactTyped
-                strings={["and can help you to turn fantasy into reality!"]}
-                typeSpeed={50}
-                startDelay={5000}
               />
             </p>
           </>
