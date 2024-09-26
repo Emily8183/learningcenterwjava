@@ -24,7 +24,7 @@ function ContactForm() {
       body: new URLSearchParams(formData).toString(),
     })
       .then(() => {
-        alert("Thank you for contacting me!");
+        alert("Hooray, I look forward to having a chat with you!");
       })
       .catch(() => alert("Oops! There's an error."));
   };
@@ -35,10 +35,20 @@ function ContactForm() {
         <div className="container px-4 px-lg-5">
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-10 col-lg-8 col-xl-7">
+              <p>Have you heard of the concept of Six Degrees of Separation?</p>
+
               <p>
-                Want to get in touch? Please fill out the form below to send me
-                a message and I will get back to you as soon as possible!
+                Initially proposed in 1929 and popularized in 1990, it suggests
+                that every individual is connected to one another through just
+                six social connections.{" "}
               </p>
+              <p>
+                Please feel free to fill out the form below so we can connect
+                and explore the possibilities together!
+              </p>
+
+              <p>* Your data will be protected by Netlify.</p>
+
               <div className="my-5">
                 <form
                   id="contactForm"
@@ -102,7 +112,7 @@ function ContactForm() {
                   <div className="form-floating">
                     {/* TODO: update the form format */}
                     <tr className="form-control">
-                      <td>Subject</td>
+                      <td>Subject </td>
                       <td>
                         {/* <select value={selectedValue} onChange={handleSelectChange}> */}
                         <select name="subject" onChange={handleChange}>
@@ -110,7 +120,7 @@ function ContactForm() {
                             Would like to build a project together
                           </option>
                           <option value="Category 2">
-                            Discuss about Leetcode solutions
+                            Discuss & practice Leetcode
                           </option>
                           <option value="Category 3">Job opportunity</option>
                           <option value="Category 4">Others</option>
