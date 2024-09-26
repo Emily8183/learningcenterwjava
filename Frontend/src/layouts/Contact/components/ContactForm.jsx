@@ -57,6 +57,7 @@ function ContactForm() {
                       className="form-control"
                       id="email"
                       type="email"
+                      name="email"
                       placeholder="Enter your email..."
                       //   data-sb-validations="required,email"
                     />
@@ -99,6 +100,7 @@ function ContactForm() {
                     <textarea
                       className="form-control"
                       id="message"
+                      name="comments"
                       placeholder="Enter your message here..."
                       style={{ height: "12rem" }}
                       //   data-sb-validations="required"

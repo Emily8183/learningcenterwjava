@@ -65,7 +65,7 @@ function DiariesList() {
             return { ...post, coverImage, title: decodedTitle };
           })
           .filter((post) => {
-            const hasProjects = /insights/i.test(post.categories);
+            const hasProjects = /projects/i.test(post.categories);
             const isEnglishTitle = /english/i.test(post.categories);
             return hasProjects && isEnglishTitle;
           });
