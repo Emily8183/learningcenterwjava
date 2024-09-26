@@ -41,16 +41,6 @@ function ContactForm() {
                 a message and I will get back to you as soon as possible!
               </p>
               <div className="my-5">
-                {/* <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!--> */}
-                {/* TODO: get a sb form api token */}
-                {/* <form id="contactForm" data-sb-form-api-token="API_TOKEN"> */}
-
                 <form
                   id="contactForm"
                   name="contactform v1"
@@ -71,15 +61,9 @@ function ContactForm() {
                       name="name"
                       placeholder="Enter your name..."
                       onChange={handleChange}
-                      //   data-sb-validations="required"
                     />
                     <label for="name">Name</label>
-                    <div
-                      className="invalid-feedback"
-                      //   data-sb-feedback="name:required"
-                    >
-                      A name is required.
-                    </div>
+                    <div className="invalid-feedback">A name is required.</div>
                   </div>
                   <div className="form-floating">
                     <input

@@ -6,9 +6,9 @@ function ContactPageBanner() {
     <>
       {/* TODO: update the content on the contact page */}
       <PageBanner
-        title="Contact Solutions"
+        title="Let's connect!"
         content="
-          Write down Contact everyday, my experience dadada"
+          "
       />
     </>
   );
