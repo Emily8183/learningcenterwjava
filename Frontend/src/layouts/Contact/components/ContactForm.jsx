@@ -19,7 +19,7 @@ function ContactForm() {
     const formData = new FormData(form);
 
     try {
-      await axios.post("/", new URLSearchParams(formData).toString(), {
+      await axios.post("/contact", new URLSearchParams(formData).toString(), {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
