@@ -42,16 +42,16 @@ function ContactForm() {
               <div className="my-5">
                 <form
                   id="contactForm"
-                  name="contactform v1"
+                  name="contactform-v1"
                   method="POST"
                   data-netlify="true"
                   onSubmit={handleSubmit}
                 >
-                  {/* <input
+                  <input
                     type="hidden"
                     name="form-name"
-                    value="contactform v1"
-                  /> */}
+                    value="contactform-v1"
+                  />
                   <div className="form-floating">
                     <input
                       className="form-control"
