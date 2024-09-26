@@ -47,6 +47,11 @@ function ContactForm() {
                   data-netlify="true"
                   onSubmit={handleSubmit}
                 >
+                  <input
+                    type="hidden"
+                    name="form-name"
+                    value="contactform-v1"
+                  />
                   <div className="form-floating">
                     <input
                       className="form-control"
