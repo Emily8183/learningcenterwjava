@@ -134,7 +134,7 @@ function ContactForm() {
                   </div>
                   {/* <!-- Submit Button--> */}
                   <button
-                    className="btn btn-primary text-uppercase disabled"
+                    className="btn btn-primary text-uppercase"
                     id="submitButton"
                     type="submit"
                   >
