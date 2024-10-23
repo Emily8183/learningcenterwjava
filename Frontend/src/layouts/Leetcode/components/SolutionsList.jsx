@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import SolutionsData from "./SolutionsData";
 
-function decodeHtmlEntities(str) {
-  return str.replace(/&amp;/g, "&");
-}
+// function decodeHtmlEntities(str) {
+//   return str.replace(/&amp;/g, "&");
+// }
 
 function SolutionsList() {
-  const [leetcodeSolutions, setLeetcodeSolutions] = useState([]); //SQL
-  const [leetcodePosts, setLeetcodePosts] = useState([]); //Medium
+  // const [leetcodeSolutions, setLeetcodeSolutions] = useState([]); //SQL
+  // const [leetcodePosts, setLeetcodePosts] = useState([]); //Medium
 
   // useEffect(() => {
   //   const fetchSolutions = async () => {
