@@ -8,75 +8,75 @@ import SolutionsData from "./SolutionsData";
 // }
 
 function SolutionsList() {
-  // const [leetcodeSolutions, setLeetcodeSolutions] = useState([]); //SQL
-  // const [leetcodePosts, setLeetcodePosts] = useState([]); //Medium
+  const [leetcodeSolutions, setLeetcodeSolutions] = useState([]); //SQL
+  const [leetcodePosts, setLeetcodePosts] = useState([]); //Medium
 
-  // useEffect(() => {
-  //   const fetchSolutions = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "http://localhost:8080/api/leetcodeSolutions"
-  //       );
+  useEffect(() => {
+    const fetchSolutions = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/api/leetcodeSolutions"
+        );
 
-  //       if (
-  //         response.data &&
-  //         Array.isArray(response.data._embedded.leetcodeSolutions)
-  //       ) {
-  //         const solutionsWithId = response.data._embedded.leetcodeSolutions.map(
-  //           (leetcodesolution) => ({
-  //             ...leetcodesolution,
-  //             id: leetcodesolution._links.self.href.split("/").pop(), // Extract ID from URL
-  //           })
-  //         );
+        if (
+          response.data &&
+          Array.isArray(response.data._embedded.leetcodeSolutions)
+        ) {
+          const solutionsWithId = response.data._embedded.leetcodeSolutions.map(
+            (leetcodesolution) => ({
+              ...leetcodesolution,
+              id: leetcodesolution._links.self.href.split("/").pop(), // Extract ID from URL
+            })
+          );
 
-  //         setLeetcodeSolutions(solutionsWithId);
-  //       } else {
-  //         console.error("Unexpected response format");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching diaries:", error);
-  //     }
-  //   };
+          setLeetcodeSolutions(solutionsWithId);
+        } else {
+          console.error("Unexpected response format");
+        }
+      } catch (error) {
+        console.error("Error fetching diaries:", error);
+      }
+    };
 
-  //   fetchSolutions();
-  // }, []);
+    fetchSolutions();
+  }, []);
 
-  // useEffect(() => {
-  //   const fetchBlogPosts = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@emily.zy.lin"
-  //       );
-  //       const data = await response.json();
-  //       const items = data.items || [];
+  useEffect(() => {
+    const fetchBlogPosts = async () => {
+      try {
+        const response = await fetch(
+          "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@emily.zy.lin"
+        );
+        const data = await response.json();
+        const items = data.items || [];
 
-  //       const updatedItems = items
-  //         // 提取 description 中的 img src
-  //         .map((post) => {
-  //           const coverImageMatch = post.description.match(
-  //             /<img[^>]+src="([^">]+)"/
-  //           );
-  //           const coverImage = coverImageMatch ? coverImageMatch[1] : null;
+        const updatedItems = items
+          // 提取 description 中的 img src
+          .map((post) => {
+            const coverImageMatch = post.description.match(
+              /<img[^>]+src="([^">]+)"/
+            );
+            const coverImage = coverImageMatch ? coverImageMatch[1] : null;
 
-  //           //decode &amp in title
-  //           const decodedTitle = decodeHtmlEntities(post.title);
+            //decode &amp in title
+            const decodedTitle = decodeHtmlEntities(post.title);
 
-  //           return { ...post, coverImage, title: decodedTitle };
-  //         })
-  //         .filter((post) => {
-  //           const hasLeetCode = /leetcode/i.test(post.categories);
-  //           const isEnglishTitle = /english/i.test(post.categories);
-  //           return hasLeetCode && isEnglishTitle;
-  //         });
+            return { ...post, coverImage, title: decodedTitle };
+          })
+          .filter((post) => {
+            const hasLeetCode = /leetcode/i.test(post.categories);
+            const isEnglishTitle = /english/i.test(post.categories);
+            return hasLeetCode && isEnglishTitle;
+          });
 
-  //       setLeetcodePosts(updatedItems);
-  //     } catch (error) {
-  //       console.error("Error fetching blog posts:", error);
-  //       // setBlogLoading(false);
-  //     }
-  //   };
-  //   fetchBlogPosts();
-  // }, []);
+        setLeetcodePosts(updatedItems);
+      } catch (error) {
+        console.error("Error fetching blog posts:", error);
+        // setBlogLoading(false);
+      }
+    };
+    fetchBlogPosts();
+  }, []);
 
   return (
     <>
