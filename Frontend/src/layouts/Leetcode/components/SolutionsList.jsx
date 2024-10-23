@@ -132,7 +132,7 @@ function SolutionsList() {
           <div>
             {/* Blog Posts from hardcode*/}
             <div className="grid4">
-              {leetcodePosts.map((post, index) => (
+              {SolutionsData.map((post, index) => (
                 <div className="blog-item" key={index}>
                   <div className="blog-thumb">
                     <img src={post.imageURL} alt="" />
