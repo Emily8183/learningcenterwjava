@@ -20,14 +20,14 @@ function Heros() {
               >
                 <h1>Project Experience</h1>
               </Link>
-              <p className="lead">
-                - Languages: JavaScript, TypeScript, Java
-                <br />
-                - Front-end: Node.js, React, Bootstrap
-                <br />
-                - Back-end: Express.js, RESTful API, Spring Boot, Thymeleaf
-                <br />- Databases: MySQL, PostgreSQL
-              </p>
+              <ul className="lead">
+                <li>Languages: JavaScript, TypeScript, Java</li>
+                <li>Front-end: Node.js, React, Bootstrap</li>
+                <li>
+                  Back-end: Express.js, RESTful API, Spring Boot, Thymeleaf
+                </li>
+                <li>Databases: MySQL, PostgreSQL</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -41,14 +41,11 @@ function Heros() {
               >
                 <h1>LeetCode Solutions</h1>
               </Link>
-              <p className="lead">
-                - Data Structures and Algorithms
-                <br />
-                - Step by Step Solutions
-                <br />
-                - Tips and Tricks
-                <br />
-              </p>
+              <ul className="lead">
+                <li>Data Structures and Algorithms</li>
+                <li>Step by Step Solutions</li>
+                <li>Tips and Tricks</li>
+              </ul>
             </div>
           </div>
           <div className="col-sm-6 col-md-6">
@@ -70,14 +67,14 @@ function Heros() {
                 {/* TODO: change to "Professional Skills & Q&A" */}
                 <h1>Professional Skills</h1>
               </Link>
-              <p className="lead">
-                - Ten years of experience in product development and project
-                management
-                <br />
-                - Self-guided on Web Development: gained 800+ followers since
-                Feb 2024
-                <br />
-              </p>
+              <ul className="lead">
+                <li>Self-driven and passionate web developer</li>
+                <li>
+                  Years of experience in product development & project
+                  management
+                </li>
+                <li>Successfully launched and grew a startup business</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -115,14 +112,11 @@ function Heros() {
               >
                 <h1>LeetCode Solutions</h1>
               </Link>
-              <p className="lead">
-                - Data Structures and Algorithms
-                <br />
-                - Step by Step Solutions
-                <br />
-                - Tips and Tricks
-                <br />
-              </p>
+              <ul className="lead">
+                <li>Data Structures and Algorithms</li>
+                <li>Step by Step Solutions</li>
+                <li>Tips and Tricks</li>
+              </ul>
             </div>
           </div>
           <div className="m-2">
@@ -136,14 +130,12 @@ function Heros() {
                 <h1>Professional Skills</h1>
               </Link>
               <ul className="lead">
+                <li>Self-driven and passionate web developer</li>
                 <li>
-                  Years of experience in product development and project
+                  Years of experience in product development & project
                   management
                 </li>
-                <li>Launched new startup business</li>
-                <li>
-                  Passionate developer with Self-guided on Web Development
-                </li>
+                <li>Successfully launched and grew a startup business</li>
               </ul>
             </div>
           </div>
