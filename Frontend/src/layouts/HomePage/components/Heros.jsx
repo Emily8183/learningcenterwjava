@@ -135,14 +135,16 @@ function Heros() {
                 {/* TODO: change to "Professional Skills & Q&A" */}
                 <h1>Professional Skills</h1>
               </Link>
-              <p className="lead">
-                - Ten years of experience in product development and project
-                management
-                <br />
-                - Self-guided on Web Development: gained 800+ followers since
-                Feb 2024
-                <br />
-              </p>
+              <ul className="lead">
+                <li>
+                  Years of experience in product development and project
+                  management
+                </li>
+                <li>Launched new startup business</li>
+                <li>
+                  Passionate developer with Self-guided on Web Development
+                </li>
+              </ul>
             </div>
           </div>
         </div>
