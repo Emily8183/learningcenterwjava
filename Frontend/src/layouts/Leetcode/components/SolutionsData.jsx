@@ -1,7 +1,7 @@
 const SolutionsData = [
   {
-    id: 1,
-    title: "Merging and Searching Techniques for Binary Trees (LC617 & LC700)",
+    index: 1,
+    title: "LC617 & LC700: Merging & Searching Techniques for Binary Trees",
     category: "Tree",
     imageURL:
       "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*DJpZGgivlaaidoju",
@@ -9,8 +9,8 @@ const SolutionsData = [
     LeetcodeNum: ["617", "700"],
   },
   {
-    id: 2,
-    title: "Comparison Between LC78 Subsets & LC90 Subsets II",
+    index: 2,
+    title: "LC78 & LC90: Backtracking and Subsets",
     category: "Backtracking",
     imageURL:
       "https://miro.medium.com/v2/resize:fit:942/format:webp/1*FcwyJsyc44t4DACjSF3r0A.png",
