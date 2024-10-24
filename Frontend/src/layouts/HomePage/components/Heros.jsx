@@ -95,14 +95,15 @@ function Heros() {
               >
                 <h1>Project Display</h1>
               </Link>
-              <p className="lead">
-                - Languages: JavaScript, TypeScript, Java
-                <br />
-                - Front-end: Node.js, React, Bootstrap
-                <br />
-                - Back-end: Express.js, RESTful API, Spring Boot, Thymeleaf
-                <br />- Databases: MySQL, PostgreSQL
-              </p>
+
+              <ul className="lead">
+                <li>Languages: JavaScript, TypeScript, Java</li>
+                <li>Front-end: Node.js, React, Bootstrap</li>
+                <li>
+                  Back-end: Express.js, RESTful API, Spring Boot, Thymeleaf
+                </li>
+                <li>Databases: MySQL, PostgreSQL</li>
+              </ul>
             </div>
           </div>
           <div className="m-2">

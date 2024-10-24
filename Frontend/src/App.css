@@ -746,3 +746,12 @@ h1,
 .mt-auto {
   margin-top: auto !important;
 }
+
+/* li {
+  display: inline-block;
+ 
+} */
+
+ul {
+  list-style-type: square;
+}

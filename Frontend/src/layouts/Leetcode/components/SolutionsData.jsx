@@ -20,5 +20,3 @@ const SolutionsData = [
 ];
 
 export default SolutionsData;
-
-//以上data已不再使用，替换成了api上的数据
