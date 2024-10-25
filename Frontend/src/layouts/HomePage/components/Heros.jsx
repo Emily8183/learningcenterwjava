@@ -10,7 +10,7 @@ function Heros() {
       <div className="d-none d-lg-block">
         <div className="row g-0 mt-5">
           <div className="col-sm-6 col-md-6">
-            <div className="col-image-left-one"></div>
+            <div className="homepage-col-image left-one"></div>
           </div>
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
             <div className="ml-2">
@@ -49,13 +49,13 @@ function Heros() {
             </div>
           </div>
           <div className="col-sm-6 col-md-6">
-            <div className="col-image-right"></div>
+            <div className="homepage-col-image right-one"></div>
           </div>
         </div>
 
         <div className="row g-0">
           <div className="col-sm-6 col-md-6">
-            <div className="col-image-left-two"></div>
+            <div className="homepage-col-image left-two"></div>
           </div>
 
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
@@ -84,7 +84,7 @@ function Heros() {
       <div className="d-lg-none">
         <div className="container">
           <div className="m-2">
-            <div className="col-image-left-one img-fluid"></div>
+            <div className="homepage-col-image left-one img-fluid"></div>
             <div className="mt-2">
               <Link
                 to="/projects"
@@ -104,7 +104,7 @@ function Heros() {
             </div>
           </div>
           <div className="m-2">
-            <div className="col-image-right img-fluid"></div>
+            <div className="homepage-col-image right-one img-fluid"></div>
             <div className="mt-2">
               <Link
                 to="/leetcodeSolutions"
@@ -120,7 +120,7 @@ function Heros() {
             </div>
           </div>
           <div className="m-2">
-            <div className="col-image-left-two img-fluid"></div>
+            <div className="homepage-col-image left-two img-fluid"></div>
             <div className="mt-2">
               <Link
                 to="/skills"

@@ -53,7 +53,7 @@ footer p {
 
 .features-icons {
   padding-top: 7rem;
-  padding-bottom: 7rem;
+  /* padding-bottom: 7rem; */
 
   .features-icons-item {
     max-width: 20rem;
@@ -99,43 +99,32 @@ footer p {
   background-color: #0e76a8;
 }
 
-.col-image-left-one {
-  /* background-color: blue; */
+.homepage-col-image {
+  height: 30em !important;
+  background-size: cover;
+  background-position: center; /* to make the images responsive */
+  border-radius: 35px;
+  display: block;
+}
+
+.left-one {
   background-image: url("./assets/img/publicImages/project32.jpg");
-  height: 30em !important;
-  /* background-size: 100%; */
-  background-size: cover;
-  /* to make the images responsive */
-  background-position: center;
-  border-radius: 35px;
-  display: block;
 }
 
-.col-image-left-two {
+.left-two {
   background-image: url("./assets/img/publicImages/professional1.jpg");
-  height: 30em !important;
-  /* background-size: 100%; */
-  background-size: cover;
-  background-position: center;
-  border-radius: 35px;
 }
 
-/* @media (max-width: 768px) {
-  .col-image-left-two {
-    height: 20em; /* 在小屏幕上调整高度 */
-/* border-radius: 20px; 在小屏幕上调整圆角 */
-/* }
-} */
-
-.col-image-right {
+.right-one {
   background-image: url("./assets/img/publicImages/leetcode5.jpg");
-  height: 30em !important;
-  border-radius: 35px;
-  /* background-size: 100%; */
-  background-size: cover;
-  background-position: center;
-  display: block;
-  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .homepage-col-image {
+    height: 20em; /* 在小屏幕上调整高度 */
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
 }
 
 .lost-image {
