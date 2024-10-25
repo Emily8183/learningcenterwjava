@@ -1,8 +1,7 @@
 import React from "react";
 import PageBanner from "../../NavbarAndFooter/PageBanner";
 import { ReactTyped } from "react-typed";
-
-function HomePageBanner() {
+export const HomePageBanner = () => {
   return (
     <>
       <PageBanner
@@ -42,6 +41,4 @@ function HomePageBanner() {
       />
     </>
   );
-}
-
-export default HomePageBanner;
+};
