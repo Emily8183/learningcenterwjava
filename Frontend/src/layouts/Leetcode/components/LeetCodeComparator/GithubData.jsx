@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+// import ReactMarkdown from "/RenderMarkdown.jsx";
+import axios from "axios";
 
 //const GithubData = () => {}
 function GithubData() {
@@ -16,7 +19,7 @@ function GithubData() {
 
         const response = await axios.get(githubApiUrl);
 
-        // 解码 Base64 内容, from markdown to html
+        // GitHub API 返回的文件内容是 Base64 编码的，需要使用 atob 解码, from markdown to html
         const markdownContent = atob(response.data.content);
         setMarkdown(markdownContent);
         setError(null); //clear error
@@ -32,11 +35,11 @@ function GithubData() {
   return (
     <div>
       <h1>Github markdown</h1>
-      {error ? ( // 如果有错误，显示错误信息
+      {/* {error ? ( // 如果有错误，显示错误信息
         <p style={{ color: "red" }}>{error}</p>
       ) : (
         <ReactMarkdown>{markdown}</ReactMarkdown> // 否则渲染 Markdown 内容
-      )}
+      )} */}
     </div>
   );
 }

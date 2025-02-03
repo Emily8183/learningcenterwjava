@@ -10,6 +10,7 @@ import Footer from "./layouts/NavbarAndFooter/Footer";
 import ProjectDiary from "./layouts/Projects/components/ProjectDiary";
 import LeetcodeSolution from "./layouts/Leetcode/components/LeetcodeSolution";
 import InsightArticle from "./layouts/Insights/components/InsightArticle";
+import GithubData from "./layouts/Leetcode/components/LeetCodeComparator/GithubData";
 
 import {
   BrowserRouter as Router,
@@ -37,6 +38,7 @@ function App() {
           <Route path="leetcodeSolutions/:id" element={<LeetcodeSolution />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/leetcodeComparator" element={<GithubData />} />
         </Routes>
         {/* </div> */}
         <Footer />
