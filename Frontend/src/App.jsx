@@ -2,6 +2,7 @@ import React from "react";
 import HomePage from "./layouts/HomePage/HomePage";
 import Projects from "./layouts/Projects/Projects";
 import LCSolutionDisplayPage from "./layouts/Leetcode/LCSolutionDisplayPage";
+import LCComparisonPage from "./layouts/Leetcode/LCComparisonPage";
 import Insights from "./layouts/Insights/Insights";
 import Skills from "./layouts/Skills/Skills";
 import Contact from "./layouts/Contact/Contact";
@@ -35,9 +36,10 @@ function App() {
           <Route path="projects" element={<Projects />} />
           <Route path="projectDiaries/:id" element={<ProjectDiary />} />
           <Route
-            path="/leetcodeSolutions"
+            path="/leetcode/solutions"
             element={<LCSolutionDisplayPage />}
           />
+          <Route path="/leetcode/comparisons" element={<LCComparisonPage />} />
           <Route path="leetcodeSolutions/:id" element={<LeetcodeSolution />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
