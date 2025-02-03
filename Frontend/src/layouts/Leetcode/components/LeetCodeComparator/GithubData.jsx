@@ -28,6 +28,17 @@ function GithubData() {
 
     fetchMarkDown(); //调用这个异步函数
   }, []);
+
+  return (
+    <div>
+      <h1>Github markdown</h1>
+      {error ? ( // 如果有错误，显示错误信息
+        <p style={{ color: "red" }}>{error}</p>
+      ) : (
+        <ReactMarkdown>{markdown}</ReactMarkdown> // 否则渲染 Markdown 内容
+      )}
+    </div>
+  );
 }
 
 export default GithubData;
