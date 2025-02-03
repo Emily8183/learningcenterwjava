@@ -634,12 +634,12 @@ h1,
   right: -250px;
   top: -15px;
   border: 5px solid #609c24;
-  -webkit-transform: rotate(15deg);
-  transform: rotate(15deg);
-  -webkit-transition: 0.3s ease-in-out;
+  /* -webkit-transform: rotate(15deg); */
+  /* transform: rotate(15deg); */
+  /* -webkit-transition: 0.3s ease-in-out; */
   /* ease-in-out:在发生旋转时平滑地过渡 */
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  /* -o-transition: 0.3s ease-in-out; */
+  /* transition: 0.3s ease-in-out; */
 }
 
 .homepage-profile-pic:hover {

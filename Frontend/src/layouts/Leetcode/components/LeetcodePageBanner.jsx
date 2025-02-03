@@ -12,8 +12,8 @@ function LeetcodePageBanner() {
             <div>
               <img
                 className="homepage-profile-pic"
-                src="../../../LC50days.png"
-                alt="Leetcode50"
+                src="../../../2024-100-new.gif"
+                alt="Leetcode100"
               />
               <h1>LeetCode Solutions</h1>
             </div>
