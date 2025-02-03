@@ -3,13 +3,13 @@ import HomePage from "./layouts/HomePage/HomePage";
 import Projects from "./layouts/Projects/Projects";
 import LCSolutionDisplayPage from "./layouts/Leetcode/LCSolutionDisplayPage";
 import LCComparisonPage from "./layouts/Leetcode/LCComparisonPage";
+import LeetcodeSolution from "./layouts/Leetcode/components/LeetcodeSolution";
 import Insights from "./layouts/Insights/Insights";
 import Skills from "./layouts/Skills/Skills";
 import Contact from "./layouts/Contact/Contact";
 import Navbar from "./layouts/NavbarAndFooter/Navbar";
 import Footer from "./layouts/NavbarAndFooter/Footer";
 import ProjectDiary from "./layouts/Projects/components/ProjectDiary";
-import LeetcodeSolution from "./layouts/Leetcode/components/LeetcodeSolution";
 import InsightArticle from "./layouts/Insights/components/InsightArticle";
 import GithubData from "./layouts/Leetcode/components/LeetCodeComparator/GithubData";
 

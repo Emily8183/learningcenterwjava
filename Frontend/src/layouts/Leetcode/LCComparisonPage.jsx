@@ -1,11 +1,12 @@
 import React from "react";
 import LeetcodePageBanner from "./components/LeetcodePageBanner";
-import SolutionsList from "./components/SolutionsList";
+import Comparison from "./components/LeetCodeComparator/Comparison";
 
 function LCComparisonPage() {
   return (
     <>
       <LeetcodePageBanner />
+      <Comparison />
     </>
   );
 }

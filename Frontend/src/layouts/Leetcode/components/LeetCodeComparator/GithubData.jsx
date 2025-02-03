@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
-// import ReactMarkdown from "/RenderMarkdown.jsx";
+// import ComparisonPage from "/ComparisonPage.jsx";
 import axios from "axios";
 
 //const GithubData = () => {}
@@ -38,7 +38,7 @@ function GithubData() {
       {/* {error ? ( // 如果有错误，显示错误信息
         <p style={{ color: "red" }}>{error}</p>
       ) : (
-        <ReactMarkdown>{markdown}</ReactMarkdown> // 否则渲染 Markdown 内容
+        <ComparisonPage>{markdown}</ComparisonPage> // 否则渲染 Markdown 内容
       )} */}
     </div>
   );
