@@ -2,7 +2,7 @@ import React from "react";
 import LeetcodePageBanner from "./components/LeetcodePageBanner";
 import SolutionsList from "./components/SolutionsList";
 
-function Leetcode() {
+function LCSolutionDisplayPage() {
   return (
     <>
       <LeetcodePageBanner />
@@ -11,4 +11,4 @@ function Leetcode() {
   );
 }
 
-export default Leetcode;
+export default LCSolutionDisplayPage;

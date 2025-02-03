@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "./layouts/HomePage/HomePage";
 import Projects from "./layouts/Projects/Projects";
-import Leetcode from "./layouts/Leetcode/Leetcode";
+import LCSolutionDisplayPage from "./layouts/Leetcode/LCSolutionDisplayPage";
 import Insights from "./layouts/Insights/Insights";
 import Skills from "./layouts/Skills/Skills";
 import Contact from "./layouts/Contact/Contact";
@@ -34,7 +34,10 @@ function App() {
           <Route path="insightArticles/:id" element={<InsightArticle />} />
           <Route path="projects" element={<Projects />} />
           <Route path="projectDiaries/:id" element={<ProjectDiary />} />
-          <Route path="/leetcodeSolutions" element={<Leetcode />} />
+          <Route
+            path="/leetcodeSolutions"
+            element={<LCSolutionDisplayPage />}
+          />
           <Route path="leetcodeSolutions/:id" element={<LeetcodeSolution />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
