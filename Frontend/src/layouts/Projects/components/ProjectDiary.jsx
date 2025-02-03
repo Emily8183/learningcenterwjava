@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PageBanner from "../../NavbarAndFooter/PageBanner";
 // import DiariesData from "./DiariesData";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import axios from "axios";
 //如何在本页面陈列一个日记：
 // 1 从URL中提取字符；

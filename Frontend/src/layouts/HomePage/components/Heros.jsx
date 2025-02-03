@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 // can import the image in this file too
 // import image4 from "../../../assets/img/publicImages/image4.jpg";

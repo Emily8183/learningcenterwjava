@@ -1,6 +1,6 @@
 import React from "react";
 import HighlightsData from "./HighlightsData";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 function HighlightsLayout() {
   return (

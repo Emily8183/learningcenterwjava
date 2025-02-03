@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router";
 
 function Navbar() {
   return (
@@ -38,7 +38,7 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <Link to={`/leetcodeSolutions`} className="nav-link">
+              <Link to={`/leetcode/solutions`} className="nav-link">
                 LeetCode
               </Link>
             </li>
