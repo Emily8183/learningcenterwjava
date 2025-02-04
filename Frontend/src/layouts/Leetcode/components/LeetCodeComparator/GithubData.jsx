@@ -73,11 +73,9 @@ function GithubData() {
 
   return (
     <div>
-      <h1>Github markdown</h1>
-
       {markdown.map((postContent) => (
         <div key={postContent.sha}>
-          <h2>Post {postContent.name}</h2>
+          <h2>Solution {postContent.name}</h2>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {typeof postContent.content === "string"
               ? postContent.content
