@@ -5,7 +5,7 @@ import GithubData from "./GithubData";
 function Comparison() {
   return (
     <>
-      <h1>123</h1>
+      <h1>{GithubData}</h1>
     </>
   );
 }
