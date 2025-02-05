@@ -8,6 +8,7 @@ import axios from "axios";
 //const GithubData = () => {}
 function GithubData() {
   const [markdown, setMarkdown] = useState("");
+  const [selectedProblems, setSelectedProblems] = useState([]);
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
@@ -59,6 +60,28 @@ function GithubData() {
     fetchMarkDown(); //调用这个异步函数
   }, []);
 
+  const handleSelectProblem = (event) => {
+    const selectedProblem = event.target.value; //用户选择的选项的值
+
+    if (selectedProblems.length >= 4) {
+      alert("Maximum is 4");
+      return;
+    }
+
+    if (selectedProblems.includes(selectedProblem)) {
+      alert("This post already exists.");
+      return;
+    }
+
+    setSelectedProblems((prev) => [...prev, selectedProblem]);
+
+    console.log("selectedProblems:", selectedProblems);
+  };
+
+  const handleClearSelection = () => {
+    setSelectedProblems([]);
+  };
+
   useEffect(() => {
     console.log("loading:", loading);
     console.log("error:", error);
@@ -73,17 +96,35 @@ function GithubData() {
 
   return (
     <div>
-      {markdown.map((postContent) => (
-        <div key={postContent.sha}>
-          <h2>Solution {postContent.name}</h2>
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {typeof postContent.content === "string"
-              ? postContent.content
-              : JSON.stringify(postContent.content)}
-            {/* 确保 content 是字符串 */}
-          </ReactMarkdown>
-        </div>
-      ))}
+      <select onChange={handleSelectProblem}>
+        <option value="">Select a problem</option>
+        {markdown.map((postContent) => (
+          <option key={postContent.sha} value={postContent.name}>
+            {postContent.name}
+          </option>
+        ))}
+      </select>
+
+      <button onClick={handleClearSelection}>Clear Selection</button>
+
+      {selectedProblems.map((problemName) => {
+        const postContent = markdown.find(
+          (content) => content.name === problemName
+          //接收数组中的每个元素 content，并检查 content.name 是否等于 problemName。
+        );
+
+        return (
+          <div key={postContent.sha}>
+            <h2>Solution {postContent.name}</h2>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {typeof postContent.content === "string"
+                ? postContent.content
+                : JSON.stringify(postContent.content)}
+              {/* 确保 content 是字符串 */}
+            </ReactMarkdown>
+          </div>
+        );
+      })}
     </div>
   );
 }
