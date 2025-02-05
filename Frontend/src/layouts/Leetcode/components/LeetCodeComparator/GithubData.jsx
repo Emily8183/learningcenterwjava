@@ -91,11 +91,22 @@ function GithubData() {
   if (error) return <p>{error}</p>;
 
   if (!markdown) {
-    return <h2>Posts take a while to load...</h2>;
+    return (
+      <h2>
+        Sorry this site is still in the progress. You will have a better version
+        soon!
+      </h2>
+    );
   }
 
   return (
-    <div>
+    <div className="container mt-5">
+      <h2>LeetCompare</h2>
+      <p>
+        This is a tool to address inefficiencies in LeetCode practice, enabling
+        side-by-side comparison of problem similarities and differences.
+      </p>
+      {/* <div className="comparison-dropdown"> */}
       <select onChange={handleSelectProblem}>
         <option value="">Select a problem</option>
         {markdown.map((postContent) => (
@@ -106,6 +117,7 @@ function GithubData() {
       </select>
 
       <button onClick={handleClearSelection}>Clear Selection</button>
+      {/* </div> */}
 
       {selectedProblems.map((problemName) => {
         const postContent = markdown.find(
