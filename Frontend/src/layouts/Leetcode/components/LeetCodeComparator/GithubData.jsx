@@ -138,7 +138,7 @@ function GithubData() {
           This is a tool to address inefficiencies in LeetCode practice,
           enabling side-by-side comparison of problem similarities and
           differences. <br />
-          You can choose up to 4 problems to compare.
+          You can choose up to <b>4 problems</b> to compare.
         </p>
 
         <div className="search-container">
