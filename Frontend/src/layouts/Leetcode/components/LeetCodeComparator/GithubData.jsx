@@ -9,6 +9,7 @@ import axios from "axios";
 function GithubData() {
   const [markdown, setMarkdown] = useState("");
   const [selectedProblems, setSelectedProblems] = useState([]);
+  const [searchNumber, setSearchNumber] = useState("");
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
@@ -78,6 +79,27 @@ function GithubData() {
     console.log("selectedProblems:", selectedProblems);
   };
 
+  // TODO: fix the bug of handleSearchNumber
+  const handleSearchNumber = () => {
+    // 遍历 markdown 文件的内容
+    for (const problem of markdown) {
+      if (problem.name.split("_")[0] === searchNumber) {
+        // 检查 selectedProblems 中是否已经存在该题目, 用markdown.some()返回true/false
+        const isAlreadySelected = markdown.some(
+          (problem) => problem.name.split("_")[0] === searchNumber
+        );
+
+        if (!isAlreadySelected) {
+          setSelectedProblems((prev) => [...prev, problem]);
+        } else {
+          alert("Problem has already been displayed");
+        }
+      } else {
+        alert("Problem hasn't been added to my pool");
+      }
+    }
+  };
+
   const handleClearSelection = () => {
     setSelectedProblems([]);
   };
@@ -106,6 +128,18 @@ function GithubData() {
         This is a tool to address inefficiencies in LeetCode practice, enabling
         side-by-side comparison of problem similarities and differences.
       </p>
+
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search by LeetCode question number"
+          value={searchNumber}
+          onChange={(e) => setSearchNumber(e.target.value)}
+        />
+
+        <button onClick={handleSearchNumber}>Search</button>
+      </div>
+
       {/* <div className="comparison-dropdown"> */}
       <select onChange={handleSelectProblem}>
         <option value="">Select a problem</option>
