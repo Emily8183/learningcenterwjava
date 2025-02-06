@@ -58,7 +58,9 @@ function GithubData() {
         setError(null); //clear error
       } catch (error) {
         console.error("Error fetching Markdown file:", error);
-        setError("Failed to load Markdown content");
+        setError(
+          "Due to the limit rates of GitHub API, the performance might not be stable. Please come back soon!"
+        );
         setLoading(false);
       }
     };
