@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 // import { useParams } from "react-router";
-// import Comparison from "/Comparison.jsx";
 import axios from "axios";
 
 //const GithubData = () => {}
@@ -45,7 +44,6 @@ function GithubData() {
           const response = await axios.get(githubApiUrl);
 
           // GitHub API 返回的文件内容是 Base64 编码的，需要使用 atob 解码, from markdown to html
-
           const content = atob(response.data.content);
 
           markdownContents.push({
@@ -87,7 +85,7 @@ function GithubData() {
     }
 
     const matchedProblem = markdown.find(
-      (content) => content.name === selectedName
+      (content) => content.name === selectedName //single expression and no curly braces, short for return
     );
 
     if (matchedProblem) {
@@ -103,8 +101,8 @@ function GithubData() {
     }
     //foundProblem is an object here
     const foundProblem = markdown.find((content) => {
-      const problemNumber = content.name.split(" ")[0];
-      return problemNumber === searchNumber; //返回找到的问题
+      const problemNumber = content.name.split(" ")[0]; //Multi-line arrow function with curly braces
+      return problemNumber === searchNumber; //return true or false
     });
 
     if (foundProblem) {
@@ -122,7 +120,8 @@ function GithubData() {
     }
   };
 
-  // The following origin code will print "can't find problem" multiple times due to the loop
+  // EXPLAINATION: The following origin code will print "can't find problem" multiple times due to the loop
+
   // for (const problem of markdown) {
   //   const num = problem.name.split(" ")[0];
 
