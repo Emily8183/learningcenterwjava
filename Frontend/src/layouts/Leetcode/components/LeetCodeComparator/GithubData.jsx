@@ -116,7 +116,9 @@ function GithubData() {
         alert("Solution has been displayed");
       }
     } else {
-      alert("This problem hasn't been added to my pool");
+      if (confirm("Oops.. Email me to add this problem for you!")) {
+        window.open("https://emily.brajk.me/contact", "_blank");
+      }
     }
   };
 
