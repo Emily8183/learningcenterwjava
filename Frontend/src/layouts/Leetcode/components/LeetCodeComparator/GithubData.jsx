@@ -69,44 +69,71 @@ function GithubData() {
   }, []);
 
   const handleSelectProblem = (event) => {
-    const selectedProblem = event.target.value; //用户选择的选项的值
+    const selectedName = event.target.value;
 
     if (selectedProblems.length >= 4) {
       alert("Maximum is 4");
       return;
     }
 
-    if (selectedProblems.includes(selectedProblem)) {
+    if (
+      selectedProblems.some((problem) => problem.name == selectedName) ||
+      selectedProblems.some(
+        (problem) => problem.name.split(" ")[0] == selectedName.split(" ")[0]
+      )
+    ) {
       alert("This post already exists.");
       return;
     }
 
-    setSelectedProblems((prev) => [...prev, selectedProblem]);
+    const matchedProblem = markdown.find(
+      (content) => content.name === selectedName
+    );
 
-    console.log("selectedProblems:", selectedProblems);
+    if (matchedProblem) {
+      setSelectedProblems((prev) => [...prev, matchedProblem]);
+    }
+
+    console.log(matchedProblem);
   };
-
-  // TODO: fix the bug of handleSearchNumber
   const handleSearchNumber = () => {
-    // 遍历 markdown 文件的内容
-    for (const problem of markdown) {
-      if (problem.name.split("_")[0] === searchNumber) {
-        // 检查 selectedProblems 中是否已经存在该题目, 用markdown.some()返回true/false
-        const isAlreadySelected = markdown.some(
-          (problem) => problem.name.split("_")[0] === searchNumber
-        );
+    if (selectedProblems.length >= 4) {
+      alert("Maximum is 4");
+      return;
+    }
+    //foundProblem is an object here
+    const foundProblem = markdown.find((content) => {
+      const problemNumber = content.name.split(" ")[0];
+      return problemNumber === searchNumber; //返回找到的问题
+    });
 
-        if (!isAlreadySelected) {
-          setSelectedProblems((prev) => [...prev, problem]);
-        } else {
-          alert("Problem has already been displayed");
-        }
+    if (foundProblem) {
+      if (
+        !selectedProblems.some(
+          (problem) => problem.name.split(" ")[0] === searchNumber
+        )
+      ) {
+        setSelectedProblems((prev) => [...prev, foundProblem]);
       } else {
-        alert("Problem hasn't been added to my pool");
+        alert("Solution has been displayed");
       }
+    } else {
+      alert("This problem hasn't been added to my pool");
     }
   };
 
+  // The following origin code will print "can't find problem" multiple times due to the loop
+  // for (const problem of markdown) {
+  //   const num = problem.name.split(" ")[0];
+
+  //   // console.log("the num retreived from json is:" + num);
+  //   // console.log("the num that user input is :" + searchNumber);
+
+  //   if (num == searchNumber && !selectedProblems.includes(problem)) {
+  //     setSelectedProblems((prev) => [...prev, problem]);
+  //   }
+  //   // else {
+  // }
   const handleClearSelection = () => {
     setSelectedProblems([]);
   };
@@ -146,7 +173,7 @@ function GithubData() {
             type="text"
             placeholder="Search by LeetCode question number"
             value={searchNumber}
-            onChange={(e) => setSearchNumber(e.target.value)}
+            onChange={(e) => setSearchNumber(e.target.value.trim())}
           />
           <button onClick={handleSearchNumber}>Search</button>
         </div>
@@ -168,26 +195,20 @@ function GithubData() {
       </div>
 
       <div className="posts-container">
-        {selectedProblems.map((problemName) => {
-          const postContent = markdown.find(
-            (content) => content.name === problemName
-            //接收数组中的每个元素 content，并检查 content.name 是否等于 problemName。
-          );
-
-          return (
-            <div className="post" key={postContent.sha}>
-              <h4>
-                <b>Solution {postContent.name}</b>
-              </h4>
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {typeof postContent.content === "string"
-                  ? postContent.content
-                  : JSON.stringify(postContent.content)}
-                {/* 确保 content 是字符串 */}
-              </ReactMarkdown>
-            </div>
-          );
-        })}
+        {selectedProblems.map((postContent) => (
+          // 回调函数这里要用圆括号或者在大括号中显式地 return 内容
+          <div className="post" key={postContent.sha}>
+            <h4>
+              <b>Solution {postContent.name}</b>
+            </h4>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {typeof postContent.content === "string"
+                ? postContent.content
+                : JSON.stringify(postContent.content)}
+              {/* 确保 content 是字符串 */}
+            </ReactMarkdown>
+          </div>
+        ))}
       </div>
     </div>
   );
