@@ -96,10 +96,11 @@ footer p {
   text-align: center;
 }
 
-/* .comparison-dropdown {
+.comparison-dropdown {
+  margin-bottom: 10px;
   display: inline-block;
   margin: 20px 0;
-} */
+}
 
 .main-color {
   background-color: #0e76a8;

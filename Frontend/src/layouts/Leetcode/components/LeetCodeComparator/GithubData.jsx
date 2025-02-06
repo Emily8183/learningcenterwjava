@@ -122,36 +122,40 @@ function GithubData() {
   }
 
   return (
-    <div className="container mt-5">
-      <h2>LeetCompare</h2>
-      <p>
-        This is a tool to address inefficiencies in LeetCode practice, enabling
-        side-by-side comparison of problem similarities and differences.
-      </p>
+    <div>
+      <div className="container mt-5">
+        <h2>LeetCompare</h2>
+        <p>
+          This is a tool to address inefficiencies in LeetCode practice,
+          enabling side-by-side comparison of problem similarities and
+          differences.
+        </p>
 
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search by LeetCode question number"
-          value={searchNumber}
-          onChange={(e) => setSearchNumber(e.target.value)}
-        />
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search by LeetCode question number"
+            value={searchNumber}
+            onChange={(e) => setSearchNumber(e.target.value)}
+          />
+          <button onClick={handleSearchNumber}>Search</button>
+        </div>
 
-        <button onClick={handleSearchNumber}>Search</button>
+        <div className="comparison-dropdown">
+          <select onChange={handleSelectProblem}>
+            <option value="">Select a problem</option>
+            {markdown.map((postContent) => (
+              <option key={postContent.sha} value={postContent.name}>
+                {postContent.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <button onClick={handleClearSelection}>Clear Selection</button>
+        </div>
       </div>
-
-      {/* <div className="comparison-dropdown"> */}
-      <select onChange={handleSelectProblem}>
-        <option value="">Select a problem</option>
-        {markdown.map((postContent) => (
-          <option key={postContent.sha} value={postContent.name}>
-            {postContent.name}
-          </option>
-        ))}
-      </select>
-
-      <button onClick={handleClearSelection}>Clear Selection</button>
-      {/* </div> */}
 
       {selectedProblems.map((problemName) => {
         const postContent = markdown.find(
