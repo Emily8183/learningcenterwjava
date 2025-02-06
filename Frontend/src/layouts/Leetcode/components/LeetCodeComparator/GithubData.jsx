@@ -15,16 +15,23 @@ function GithubData() {
 
   useEffect(() => {
     const fetchMarkDown = async () => {
+      setLoading(true);
       try {
-        const repoOwner = "Emily8183"; // 例如 "yourusername"
-        const repoName = "leetcode-study-notes"; // 例如 "leetcode-notes"
+        const repoOwner = "Emily8183";
+        const repoName = "leetcode-study-notes";
 
-        const filePaths = [
-          "36_Valid_Sudoku.md",
-          "682_Baseball_Game.md",
-          "735_Asteroid_Collision.md",
-          "128_Longest_Consecutive_Sequence.md",
-        ];
+        const githubAllApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/git/trees/main?recursive=1`;
+        const response = await axios.get(githubAllApiUrl);
+
+        //fetch all the file names
+        const filePaths = [];
+        const apiTreeLinks = response.data.tree;
+
+        for (const file of apiTreeLinks) {
+          if (file.path.endsWith(".md") && file.path !== "README.md") {
+            filePaths.push(file.path.replace("leetcode-study-notes/", ""));
+          }
+        }
 
         const markdownContents = [];
 
