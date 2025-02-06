@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
+import { FaBullhorn } from "react-icons/fa";
 // import axios from "axios"; -> fetching solution data in "LeetcodeSolution"
 import SolutionsData from "./SolutionsData";
 
@@ -130,7 +131,25 @@ function SolutionsList() {
           </div>  */}
 
           <div>
+            <Link
+              to="https://emily.brajk.me/leetcode/comparisons"
+              div
+              className="announcement-link"
+            >
+              <div className="announcement">
+                <FaBullhorn className="announcement-icon" />
+                <p>
+                  <strong>
+                    LeetCompare Trial Version is Now Live! Click to access.
+                    Compare up to 4 similar problems side-by-side for efficient
+                    study.
+                  </strong>
+                </p>
+              </div>
+            </Link>
+
             {/* Blog Posts from hardcode*/}
+
             <div className="grid4">
               {SolutionsData.map((post, index) => (
                 <div className="blog-item" key={index}>

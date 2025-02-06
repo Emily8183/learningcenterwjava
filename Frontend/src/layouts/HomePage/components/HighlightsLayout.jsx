@@ -1,10 +1,27 @@
 import React from "react";
 import HighlightsData from "./HighlightsData";
 import { Link } from "react-router";
+import { FaBullhorn } from "react-icons/fa";
 
 function HighlightsLayout() {
   return (
     <>
+      <Link
+        to="https://emily.brajk.me/leetcode/comparisons"
+        div
+        className="announcement-link"
+      >
+        <div className="announcement">
+          <FaBullhorn className="announcement-icon" />
+          <p>
+            <strong>
+              LeetCompare Trial Version is Now Live! Click to access. Compare up
+              to 4 similar problems side-by-side for efficient study. For any
+              feedback or suggestions, feel free to reach out!
+            </strong>
+          </p>
+        </div>
+      </Link>
       <section className="features-icons bg-light text-center">
         <div className="container">
           <div className="row">
