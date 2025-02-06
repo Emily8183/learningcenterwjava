@@ -108,6 +108,38 @@ footer p {
   gap: 20px;
 }
 
+.columns-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.column a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: rgb(48, 117, 42); /* Button background color */
+  color: white; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.column a:hover {
+  background-color: rgb(77, 150, 71); /* Darker background on hover */
+}
+
+.column h3 {
+  margin: 0;
+  padding: 5px 0;
+}
+
 .post {
   margin-top: 30px;
   flex: 1 1 calc(25% - 20px);
