@@ -114,10 +114,12 @@ function GithubData() {
 
   if (!markdown) {
     return (
-      <h2>
-        Sorry this site is still in the progress. You will have a better version
-        soon!
-      </h2>
+      <div className="container mt-5">
+        <p>
+          Sorry this site is still in the progress. You will have a better
+          version soon!
+        </p>
+      </div>
     );
   }
 
@@ -128,7 +130,8 @@ function GithubData() {
         <p>
           This is a tool to address inefficiencies in LeetCode practice,
           enabling side-by-side comparison of problem similarities and
-          differences.
+          differences. <br />
+          You can choose up to 4 problems to compare.
         </p>
 
         <div className="search-container">
@@ -153,28 +156,32 @@ function GithubData() {
         </div>
 
         <div>
-          <button onClick={handleClearSelection}>Clear Selection</button>
+          <button onClick={handleClearSelection}>Clear All Selections</button>
         </div>
       </div>
 
-      {selectedProblems.map((problemName) => {
-        const postContent = markdown.find(
-          (content) => content.name === problemName
-          //接收数组中的每个元素 content，并检查 content.name 是否等于 problemName。
-        );
+      <div className="posts-container">
+        {selectedProblems.map((problemName) => {
+          const postContent = markdown.find(
+            (content) => content.name === problemName
+            //接收数组中的每个元素 content，并检查 content.name 是否等于 problemName。
+          );
 
-        return (
-          <div key={postContent.sha}>
-            <h2>Solution {postContent.name}</h2>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {typeof postContent.content === "string"
-                ? postContent.content
-                : JSON.stringify(postContent.content)}
-              {/* 确保 content 是字符串 */}
-            </ReactMarkdown>
-          </div>
-        );
-      })}
+          return (
+            <div className="post" key={postContent.sha}>
+              <h4>
+                <b>Solution {postContent.name}</b>
+              </h4>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {typeof postContent.content === "string"
+                  ? postContent.content
+                  : JSON.stringify(postContent.content)}
+                {/* 确保 content 是字符串 */}
+              </ReactMarkdown>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

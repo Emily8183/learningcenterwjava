@@ -102,6 +102,22 @@ footer p {
   margin: 20px 0;
 }
 
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.post {
+  margin-top: 30px;
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid rgb(48, 117, 42);
+  border-radius: 5px;
+  background-color: #e1f1e1;
+}
+
 .main-color {
   background-color: #0e76a8;
 }
