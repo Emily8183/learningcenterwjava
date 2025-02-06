@@ -20,7 +20,10 @@ function Heros() {
               >
                 <h1>Project Experience</h1>
               </Link>
-              <ul className="lead">
+              <ul
+                className="lead"
+                style={{ listStyleType: "none", paddingLeft: 0 }}
+              >
                 <li>Languages: JavaScript, TypeScript, Java</li>
                 <li>Front-end: Node.js, React, Bootstrap</li>
                 <li>
@@ -41,10 +44,20 @@ function Heros() {
               >
                 <h1>LeetCode Solutions</h1>
               </Link>
-              <ul className="lead">
+              <ul
+                className="lead"
+                style={{ listStyleType: "none", paddingLeft: 0 }}
+              >
                 <li>Data Structures and Algorithms</li>
                 <li>Step by Step Solutions</li>
                 <li>Tips and Tricks</li>
+                <Link
+                  to="https://emily.brajk.me/leetcode/comparisons"
+                  div
+                  className="announcement-link"
+                >
+                  <li>LeetCompare - a tool to show solutions side-by-side</li>
+                </Link>
               </ul>
             </div>
           </div>
@@ -67,7 +80,10 @@ function Heros() {
                 {/* TODO: change to "Professional Skills & Q&A" */}
                 <h1>Professional Skills</h1>
               </Link>
-              <ul className="lead">
+              <ul
+                className="lead"
+                style={{ listStyleType: "none", paddingLeft: 0 }}
+              >
                 <li>Self-driven and passionate web developer</li>
                 <li>
                   Years of experience in product development & project
@@ -93,7 +109,10 @@ function Heros() {
                 <h1>Project Display</h1>
               </Link>
 
-              <ul className="lead">
+              <ul
+                className="lead"
+                style={{ listStyleType: "none", paddingLeft: 0 }}
+              >
                 <li>Languages: JavaScript, TypeScript, Java</li>
                 <li>Front-end: Node.js, React, Bootstrap</li>
                 <li>
@@ -112,10 +131,14 @@ function Heros() {
               >
                 <h1>LeetCode Solutions</h1>
               </Link>
-              <ul className="lead">
+              <ul
+                className="lead"
+                style={{ listStyleType: "none", paddingLeft: 0 }}
+              >
                 <li>Data Structures and Algorithms</li>
                 <li>Step by Step Solutions</li>
                 <li>Tips and Tricks</li>
+                <li>LeetCompare - a tool to show solutions side-by-side</li>
               </ul>
             </div>
           </div>
@@ -129,7 +152,10 @@ function Heros() {
                 {/* TODO: change to "Professional Skills & Q&A" */}
                 <h1>Professional Skills</h1>
               </Link>
-              <ul className="lead">
+              <ul
+                className="lead"
+                style={{ listStyleType: "none", paddingLeft: 0 }}
+              >
                 <li>Self-driven and passionate web developer</li>
                 <li>
                   Years of experience in product development & project

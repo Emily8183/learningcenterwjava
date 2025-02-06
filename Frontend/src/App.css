@@ -153,15 +153,18 @@ footer p {
 .announcement-link {
   text-decoration: none;
   color: inherit;
+  font-weight: bold;
 }
 
 .announcement {
   background-color: #8bc462;
   border: 2px solid #8bc462;
   padding: 10px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   /* margin: 20px 0; */
   font-size: 18px;
   color: #333;
