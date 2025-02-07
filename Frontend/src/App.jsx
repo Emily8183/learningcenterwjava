@@ -10,7 +10,7 @@ import Navbar from "./layouts/NavbarAndFooter/Navbar";
 import Footer from "./layouts/NavbarAndFooter/Footer";
 import ProjectDiary from "./layouts/Projects/components/ProjectDiary";
 import InsightArticle from "./layouts/Insights/components/InsightArticle";
-import GithubData from "./layouts/Leetcode/components/LeetCodeComparator/GithubData";
+import LCComparisonPage from "./layouts/Leetcode/LCComparisonPage";
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router";
 import "./App.css"; //用于管理与 App 组件相关的样式
@@ -37,7 +37,7 @@ function App() {
           <Route path="leetcode/solutions/:id" element={<LeetcodeSolution />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/leetcode/comparison" element={<GithubData />} />
+          <Route path="/leetcode/comparisons" element={<LCComparisonPage />} />
         </Routes>
         {/* </div> */}
         <Footer />

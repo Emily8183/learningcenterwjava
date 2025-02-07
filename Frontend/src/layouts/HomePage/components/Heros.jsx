@@ -39,7 +39,7 @@ function Heros() {
           <div className="col-4 col-md-4 container d-flex justify-content-center align-items-center">
             <div className="ml-2">
               <Link
-                to="/leetcodeSolutions"
+                to="/leetcode/solutions"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <h1>LeetCode Solutions</h1>
@@ -52,7 +52,7 @@ function Heros() {
                 <li>Step by Step Solutions</li>
                 <li>Tips and Tricks</li>
                 <Link
-                  to="https://emily.brajk.me/leetcode/comparisons"
+                  to="/leetcode/comparisons"
                   div
                   className="announcement-link"
                 >
@@ -139,7 +139,7 @@ function Heros() {
                 <li>Step by Step Solutions</li>
                 <li>Tips and Tricks</li>
                 <Link
-                  to="/leetcode/solutions"
+                  to="/leetcode/comparisons"
                   div
                   className="announcement-link"
                 >

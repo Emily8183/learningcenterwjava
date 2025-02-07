@@ -131,11 +131,7 @@ function SolutionsList() {
           </div>  */}
 
           <div>
-            <Link
-              to="https://emily.brajk.me/leetcode/comparisons"
-              div
-              className="announcement-link"
-            >
+            <Link to="/leetcode/comparisons" div className="announcement-link">
               <div className="announcement">
                 <FaBullhorn className="announcement-icon" />
                 <p>
