@@ -126,7 +126,7 @@ function Heros() {
             <div className="homepage-col-image right-one img-fluid"></div>
             <div className="mt-2">
               <Link
-                to="/leetcodeSolutions"
+                to="/leetcode/solutions"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <h1>LeetCode Solutions</h1>
@@ -139,7 +139,7 @@ function Heros() {
                 <li>Step by Step Solutions</li>
                 <li>Tips and Tricks</li>
                 <Link
-                  to="https://emily.brajk.me/leetcode/comparisons"
+                  to="/leetcode/solutions"
                   div
                   className="announcement-link"
                 >

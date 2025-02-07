@@ -30,7 +30,7 @@ const HighlightsData = [
     description:
       "Join me in practicing the UMPIRE Strategy through coding challenges",
     image: "https://picsum.photos/id/237/",
-    path: "/leetcodeSolutions",
+    path: "/leetcode/solutions",
   },
 ];
 
