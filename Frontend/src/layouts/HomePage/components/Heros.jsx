@@ -138,7 +138,13 @@ function Heros() {
                 <li>Data Structures and Algorithms</li>
                 <li>Step by Step Solutions</li>
                 <li>Tips and Tricks</li>
-                <li>LeetCompare - a tool to show solutions side-by-side</li>
+                <Link
+                  to="https://emily.brajk.me/leetcode/comparisons"
+                  div
+                  className="announcement-link"
+                >
+                  <li>LeetCompare - a tool to show solutions side-by-side</li>
+                </Link>
               </ul>
             </div>
           </div>

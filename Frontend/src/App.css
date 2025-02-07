@@ -86,12 +86,6 @@ footer p {
   height: 25em !important;
 }
 
-@media (max-width: 768px) {
-  .header {
-    height: 33em !important;
-  }
-}
-
 /* .container {
   text-align: center;
 } */
@@ -208,6 +202,49 @@ footer p {
     height: 20em; /* 在小屏幕上调整高度 */
     border-radius: 20px;
     margin-bottom: 30px;
+  }
+
+  .columns-container {
+    flex-direction: column; /* Stack columns vertically */
+    align-items: center; /* Center align columns */
+  }
+
+  .column {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .column a {
+    margin: 1px 0;
+  }
+
+  .header {
+    height: 33em !important;
+  }
+
+  .grid4 {
+    grid-template-columns: 1fr;
+    /* gap: 15px; */
+  }
+
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 720px;
+  }
+
+  .blog-item {
+    width: 100%;
+  }
+
+  .blog-thumb img {
+    width: 100%; /* 图片占满容器宽度 */
+    height: auto; /* 高度自适应 */
+  }
+
+  .blog-title {
+    font-size: 18px; /* 调整标题字体大小 */
+    text-align: center; /* 标题居中 */
   }
 }
 
@@ -734,13 +771,7 @@ h1,
     max-width: 540px;
   }
 }
-@media (min-width: 768px) {
-  .container-md,
-  .container-sm,
-  .container {
-    max-width: 720px;
-  }
-}
+
 @media (min-width: 992px) {
   .container-lg,
   .container-md,
