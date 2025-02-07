@@ -6,7 +6,7 @@ function Skills() {
   return (
     <>
       <SkillsPageBanner />
-      <h1> 111</h1>
+      <h1></h1>
     </>
   );
 }

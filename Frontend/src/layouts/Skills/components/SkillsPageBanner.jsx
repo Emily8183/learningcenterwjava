@@ -6,9 +6,9 @@ function SkillsPageBanner() {
     <>
       {/* TODO: update the content on the projects page */}
       <PageBanner
-        title="Skills Solutions"
+        title="Skills"
         content="
-          Write down Skills"
+          Coming Soon"
       />
     </>
   );
