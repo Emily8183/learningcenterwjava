@@ -1,13 +1,14 @@
 import React from "react";
 import LeetcodePageBanner from "./components/LeetcodePageBanner";
-// import Comparison from "./components/LeetCodeComparator/Comparison";
 import GithubData from "./components/LeetCodeComparator/GithubData";
+import ComparisonData from "./components/LeetCodeComparator/ComparisonData";
 
 function LCComparisonPage() {
   return (
     <>
       <LeetcodePageBanner />
       <GithubData />
+      <ComparisonData category="array" />
     </>
   );
 }

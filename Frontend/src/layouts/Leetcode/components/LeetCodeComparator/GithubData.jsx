@@ -1,10 +1,10 @@
+//this file is to fetch data from each problems' markdown file and display them in a dropdown list
+
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-// import { useParams } from "react-router";
 import axios from "axios";
 
-//const GithubData = () => {}
 function GithubData() {
   const [markdown, setMarkdown] = useState("");
   const [selectedProblems, setSelectedProblems] = useState([]);
