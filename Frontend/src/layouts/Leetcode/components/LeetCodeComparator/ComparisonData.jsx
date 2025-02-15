@@ -32,7 +32,7 @@ const ComparisonData = ({ category }) => {
     <div>
       {/* <h2>{category} Problems</h2> */}
       <table>
-        {/* <thead>
+        <thead>
           <tr>
             <th>Id No.</th>
             <th>Problem 1 </th>
@@ -40,9 +40,8 @@ const ComparisonData = ({ category }) => {
             <th>Problem 3 </th>
             <th>Problem 4 </th>
             <th>Notes</th>
-        
           </tr>
-        </thead> */}
+        </thead>
 
         {/* this strucutre provides cleaner code */}
         <tbody>
@@ -57,7 +56,7 @@ const ComparisonData = ({ category }) => {
                 <td>{item.problem3 || "N/A"}</td>
                 <td>{item.problem4 || "N/A"}</td>
                 <td>{item.notes || "N/A"}</td>
-                {/* <td>{item.comparison || "N/A"}</td> */}
+                <td>{item.comparison || "N/A"}</td>
               </tr>
             ))
           ) : (
