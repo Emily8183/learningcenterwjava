@@ -17,9 +17,7 @@ const ComparisonData = ({ category }) => {
     axios
       .get(url)
       .then((response) => {
-        // console.log(response.data);
-        // console.log("typeof response.data", typeof response.data);
-        setData(Object.values(response.data));
+        setData(response.data); //因为comparison-array.json直接设置为数组，所以直接返回response.data
       })
       .catch((error) => {
         console.error("Error fetching data:", error.message);
