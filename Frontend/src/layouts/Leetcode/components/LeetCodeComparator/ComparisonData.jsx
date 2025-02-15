@@ -10,7 +10,7 @@ const ComparisonData = ({ category }) => {
   useEffect(() => {
     if (!category) return;
 
-    const url = `https://raw.githubusercontent.com/Emily8183/leetcode-study-notes/fetch_markdown/comparison-${category}.json`;
+    const url = `https://raw.githubusercontent.com/Emily8183/leetcode-study-notes/main/comparison-${category}.json`;
     // const url =
     //   "https://raw.githubusercontent.com/Emily8183/leetcode-study-notes/main/comparison-array.json"; //从github上获取数据
 
