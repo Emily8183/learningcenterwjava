@@ -40,6 +40,7 @@ const ComparisonData = ({ category }) => {
             <th>Problem 3 </th>
             <th>Problem 4 </th>
             <th>Notes</th>
+            <th>Comparison</th>
           </tr>
         </thead>
 
@@ -56,7 +57,10 @@ const ComparisonData = ({ category }) => {
                 <td>{item.problem3 || "N/A"}</td>
                 <td>{item.problem4 || "N/A"}</td>
                 <td>{item.notes || "N/A"}</td>
-                <td>{item.comparison || "N/A"}</td>
+
+                <td>
+                  <button onClick={() => handleCompare(item)}>Compare</button>
+                </td>
               </tr>
             ))
           ) : (
