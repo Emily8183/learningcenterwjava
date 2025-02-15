@@ -8,7 +8,7 @@ function LCComparisonPage() {
     <>
       <LeetcodePageBanner />
       <GithubData />
-      <ComparisonData category="Arrays" />
+      <ComparisonData category="array" />
     </>
   );
 }
