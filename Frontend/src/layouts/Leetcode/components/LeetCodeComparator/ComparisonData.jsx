@@ -5,7 +5,7 @@ import axios from "axios";
 const ComparisonData = ({ category }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!category) return;
@@ -18,15 +18,22 @@ const ComparisonData = ({ category }) => {
       .get(url)
       .then((response) => {
         setData(response.data); //因为comparison-array.json直接设置为数组，所以直接返回response.data
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error.message);
         setError(error.message);
+        setLoading(false);
       });
   }, [category]); //每次 category 变化时，重新 fetch 数据
 
+  if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
   if (!data) return <p>Loading...</p>;
+
+  const handleCompare = (item) => {
+    onCompare(item);
+  };
 
   return (
     <div>
