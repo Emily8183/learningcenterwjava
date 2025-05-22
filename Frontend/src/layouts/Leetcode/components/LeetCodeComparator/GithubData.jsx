@@ -197,7 +197,7 @@ function GithubData() {
         </div>
       </div>
 
-      <div className="posts-container">
+      {/* <div className="posts-container">
         {selectedProblems.map((postContent) => (
           // 回调函数这里要用圆括号或者在大括号中显式地 return 内容
           <div className="post" key={postContent.sha}>
@@ -208,11 +208,11 @@ function GithubData() {
               {typeof postContent.content === "string"
                 ? postContent.content
                 : JSON.stringify(postContent.content)}
-              {/* 确保 content 是字符串 */}
+              //确保 content 是字符串 
             </ReactMarkdown>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
