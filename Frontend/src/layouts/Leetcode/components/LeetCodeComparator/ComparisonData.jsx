@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import DisplayGithubSolutions from "./DisplayGithubSolutions";
+import GithubData from "./GithubData";
 
 //加入category用以区分不同的数据
-const ComparisonData = ({ category }) => {
+const ComparisonData = ({ category, onCompare }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -31,9 +33,9 @@ const ComparisonData = ({ category }) => {
   if (error) return <p>{error}</p>;
   if (!data) return <p>Loading...</p>;
 
-  const handleCompare = (item) => {
-    onCompare(item);
-  };
+  // const handleCompare = (item) => {
+  //   onCompare(item); //onCompare是从父组件（LCComparisonPage）传递过来的
+  // };
 
   return (
     <div>
@@ -66,7 +68,7 @@ const ComparisonData = ({ category }) => {
                 <td>{item.notes || "N/A"}</td>
 
                 <td>
-                  <button onClick={() => handleCompare(item)}>Compare</button>
+                  <button onClick={() => onCompare(item)}>Compare</button>
                 </td>
               </tr>
             ))
@@ -78,6 +80,9 @@ const ComparisonData = ({ category }) => {
           )}
         </tbody>
       </table>
+
+      {/* display githubData */}
+      {/* <GithubData selectiedProblems={selectiedProblems} /> */}
     </div>
   );
 };
