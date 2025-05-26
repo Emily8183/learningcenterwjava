@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { FaBullhorn } from "react-icons/fa";
-// import axios from "axios"; -> fetching solution data in "LeetcodeSolution"
+import axios from "axios"; // fetching solution data in "LeetcodeSolution"
 import SolutionsData from "./SolutionsData";
 
 // function decodeHtmlEntities(str) {
@@ -9,38 +9,39 @@ import SolutionsData from "./SolutionsData";
 // }
 
 function SolutionsList() {
-  // const [leetcodeSolutions, setLeetcodeSolutions] = useState([]); //SQL
+  const [leetcodeSolutions, setLeetcodeSolutions] = useState([]); //SQL
   // const [leetcodePosts, setLeetcodePosts] = useState([]); //Medium
 
-  // useEffect(() => {
-  //   const fetchSolutions = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "http://localhost:8080/api/leetcodeSolutions"
-  //       );
+  //fetch from sql
+  useEffect(() => {
+    const fetchSolutions = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8080/api/leetcodeSolutions" //matching the backend url
+        );
 
-  //       if (
-  //         response.data &&
-  //         Array.isArray(response.data._embedded.leetcodeSolutions)
-  //       ) {
-  //         const solutionsWithId = response.data._embedded.leetcodeSolutions.map(
-  //           (leetcodesolution) => ({
-  //             ...leetcodesolution,
-  //             id: leetcodesolution._links.self.href.split("/").pop(), // Extract ID from URL
-  //           })
-  //         );
+        if (
+          response.data &&
+          Array.isArray(response.data._embedded.leetcodeSolutions)
+        ) {
+          const solutionsWithId = response.data._embedded.leetcodeSolutions.map(
+            (leetcodesolution) => ({
+              ...leetcodesolution,
+              id: leetcodesolution._links.self.href.split("/").pop(), // Extract ID from URL
+            })
+          );
 
-  //         setLeetcodeSolutions(solutionsWithId);
-  //       } else {
-  //         console.error("Unexpected response format");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching diaries:", error);
-  //     }
-  //   };
+          setLeetcodeSolutions(solutionsWithId);
+        } else {
+          console.error("Unexpected response format");
+        }
+      } catch (error) {
+        console.error("Error fetching diaries:", error);
+      }
+    };
 
-  //   fetchSolutions();
-  // }, []);
+    fetchSolutions();
+  }, []);
 
   // useEffect(() => {
   //   const fetchBlogPosts = async () => {
@@ -83,36 +84,48 @@ function SolutionsList() {
     <>
       <section className="blog-section">
         <div className="container">
-          {/* Blog Posts from my SQL*/}
-          {/* <div className="grid4">
-            {leetcodeSolutions.map((blog) => (
-              <div className="blog-item" key={blog.id}>
-                <div className="blog-thumb">
-                  <img src={`../../../leetcode/${blog.imageURL}`} alt="" />
-
-                  <img src={`../../../leetcode/LC704.png`} alt="" />
-                  <a href="#" className="category">
-                    {blog.dataStructure}
-                  </a>
-                </div>
-                <div className="blog-content">
-                  TODO: see if I need to display dates here
-                  <h3 className="blog-title">
-                    <Link
-                      to={`/leetcodeSolutions/${blog.id}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      {blog.title}
-                    </Link>
-                  </h3>
-                </div>
+          <div>
+            <Link to="/leetcode/comparisons" div className="announcement-link">
+              <div className="announcement">
+                <FaBullhorn className="announcement-icon" />
+                <p>
+                  <strong>
+                    LeetCompare Trial Version is Now Live! Click to access.
+                    Compare up to 4 similar problems side-by-side for efficient
+                    study.
+                  </strong>
+                </p>
               </div>
-            ))}
-          </div> */}
+            </Link>
 
-          {/* <div>
+            {/* Blog Posts from my SQL*/}
+            <div className="grid4">
+              {leetcodeSolutions.map((blog) => (
+                <div className="blog-item" key={blog.id}>
+                  <div className="blog-thumb">
+                    <img src={`../../../leetcode/${blog.imageURL}`} alt="" />
+                    <a href="#" className="category">
+                      {blog.dataStructure}
+                    </a>
+                  </div>
+                  <div className="blog-content">
+                    {/* TODO: see if I need to display dates here */}
+                    <h3 className="blog-title">
+                      <Link
+                        to={`/leetcode/solutions/${blog.id}`}
+                        style={{ textDecoration: "none" }}
+                      >
+                        {blog.title}
+                      </Link>
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* <div>
             {/* Blog Posts from Medium*/}
-          {/* <div className="grid4">
+            {/* <div className="grid4">
               {leetcodePosts.map((post, index) => (
                 <div className="blog-item" key={index}>
                   <div className="blog-thumb">
@@ -130,21 +143,7 @@ function SolutionsList() {
             </div>
           </div>  */}
 
-          <div>
-            <Link to="/leetcode/comparisons" div className="announcement-link">
-              <div className="announcement">
-                <FaBullhorn className="announcement-icon" />
-                <p>
-                  <strong>
-                    LeetCompare Trial Version is Now Live! Click to access.
-                    Compare up to 4 similar problems side-by-side for efficient
-                    study.
-                  </strong>
-                </p>
-              </div>
-            </Link>
-
-            {/* Blog Posts from hardcode*/}
+            {/* Blog Posts from Medium blog*/}
 
             <div className="grid4">
               {SolutionsData.map((post, index) => (

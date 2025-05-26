@@ -3,10 +3,10 @@ import { useParams } from "react-router";
 import axios from "axios";
 
 function LeetcodeSolution() {
-  const { id } = useParams();
+  const { id } = useParams(); //get the id from the URL
 
   const [leetcodeSolution, setLeetcodeSolution] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -54,7 +54,8 @@ function LeetcodeSolution() {
                   className="badge bg-secondary text-decoration-none link-light"
                   href="#!"
                 >
-                  {leetcodeSolution.dataStructure}
+                  {/* {leetcodeSolution.dataStructure} */}
+                  Link to solution
                 </a>
               </header>
 
@@ -69,7 +70,8 @@ function LeetcodeSolution() {
               {/* Post content */}
               <section className="mb-5">
                 <p className="fs-5 mb-4" style={{ whiteSpace: "pre-line" }}>
-                  {leetcodeSolution.content.replace(/\\n/g, "\n")}
+                  {/* {leetcodeSolution.content.replace(/\\n/g, "\n")} */}
+                  {leetcodeSolution.content}
                   {/* to change line in sql */}
                 </p>
                 {/* TODO: can add some subtitles here */}
