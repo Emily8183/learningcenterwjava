@@ -20,7 +20,6 @@ This portfolio serves two main purposes:
 ### 🔹 Frontend
 - **Language**: JavaScript  
 - **Framework**: React  
-- **Deployment**: [Netlify](https://www.netlify.com/)
 
 ### 🔹 Backend
 - **Initial Setup**:
@@ -43,15 +42,14 @@ This portfolio serves two main purposes:
 - `POST` — Create new entries  
 - `PUT` — Update existing entries  
 - `DELETE` — Remove entries
-- `OPTIONS`
   
 ---
 
 ## 🚀 Deployment
 
-- **Frontend**: Hosted on **Netlify** for fast and reliable static site delivery.  
+- **Frontend**: Hosted on [Netlify](https://www.netlify.com/) for fast and reliable static site delivery.  
 - **Backend**:
   - Previously experimented with **Medium Blog API** and **GitHub API** as data sources
-  - Due to reliability issues, currently migrating to a fully **AWS Serverless Architecture** to reduce cost and improve availability
+  - Due to reliability issues, currently migrating to a fully **AWS Serverless Architecture** to improve availability
 
 ---
