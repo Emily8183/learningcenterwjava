@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="leetcodeSolution")
+@Table(name="leetcode_solution")
 public class LeetcodeSolution extends Post{
 
     @Column(name = "dataStructure")

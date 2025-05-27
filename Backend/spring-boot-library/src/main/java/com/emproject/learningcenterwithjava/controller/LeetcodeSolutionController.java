@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+//@CrossOrigin(origins = "http://localhost:5174")
 @RestController
 @RequestMapping("api/leetcodeSolutions")
 public class LeetcodeSolutionController {
