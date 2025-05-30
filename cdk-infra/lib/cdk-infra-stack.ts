@@ -38,6 +38,9 @@ export class CdkInfraStack extends cdk.Stack {
       code: lambda.Code.fromAsset("./services/"),
       functionName: "lambdaFetchTable",
       role: leetcompareiamrole,
+      environment: {
+        TABLE_NAME: solutionTable.tableName, //matching: const table = process.env.TABLE_NAME;
+      },
     });
 
     // API Gateway

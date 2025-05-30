@@ -1,3 +1,6 @@
+//old version: fetch data from github repo
+//migrating to aws for better stability
+
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
