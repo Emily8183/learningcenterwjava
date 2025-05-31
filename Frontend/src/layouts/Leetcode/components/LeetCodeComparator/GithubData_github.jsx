@@ -22,8 +22,8 @@ function GithubData() {
         const repoOwner = "Emily8183";
         const repoName = "leetcode-study-notes";
 
-        const githubAllApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/git/trees/main?recursive=1`;
-        const response = await axios.get(githubAllApiUrl);
+        // const githubAllApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/git/trees/main?recursive=1`;
+        // const response = await axios.get(githubAllApiUrl);
 
         //fetch all the file names
         const filePaths = [];

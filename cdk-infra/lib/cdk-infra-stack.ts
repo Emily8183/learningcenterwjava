@@ -47,6 +47,7 @@ export class CdkInfraStack extends cdk.Stack {
     const leetcomparerestapi = new apigateway.RestApi(this, "LeetCompareApi", {
       restApiName: "leetcompareAPI",
       defaultCorsPreflightOptions: {
+        //only works for OPTIONS, need to set in Lambda function too
         allowOrigins: [
           "http://localhost:5173",
           // "https://xxx.app",
