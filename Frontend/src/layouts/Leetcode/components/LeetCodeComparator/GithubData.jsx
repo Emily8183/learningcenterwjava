@@ -10,19 +10,21 @@ import axios from "axios";
 function GithubData() {
   const [displayed, setDisplayed] = useState([]);
   const [selectedProblems, setSelectedProblems] = useState([]);
+  //   const [content, setContent] = useState("");
   const [searchNumber, setSearchNumber] = useState("");
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
   const apiKey = import.meta.env.VITE_LEET_API_KEY;
+  const apiUrl = import.meta.env.VITE_LEET_API_URL;
 
+  //fetch all the problems' titles from DynamoDB
   useEffect(() => {
     const fetchProblemList = async () => {
       setLoading(true);
 
       try {
-        const baseURL =
-          "https://l3b7sdjdxf.execute-api.us-east-1.amazonaws.com/prod";
+        const baseURL = apiUrl;
         const res = await axios.get(`${baseURL}/leetResource`, {
           headers: {
             "x-api-key": apiKey,
@@ -51,6 +53,64 @@ function GithubData() {
     fetchProblemList();
   }, []);
 
+  //handle clicking on the selected prob
+  const handleClickProblem = async (event) => {
+    const selectedTitle = event.target.value;
+
+    if (selectedProblems.length >= 4) {
+      alert("Maximum is 4");
+      return;
+    }
+
+    const matchedProblem = displayed.find(
+      (content) => content.title === selectedTitle
+    );
+
+    // console.log("matchedProblem:", matchedProblem); <= Test result: works well
+
+    //if the title on the list but not in the table anymore
+    if (!matchedProblem) {
+      alert("Problem not found.");
+      return;
+    }
+
+    // if duplicated
+    const isDuplicate = selectedProblems.some(
+      (problem) => problem.problemId === matchedProblem.problemId
+    );
+
+    if (isDuplicate) {
+      alert("This post already exists.");
+      return;
+    }
+
+    try {
+      const baseURL = apiUrl;
+
+      const res = await axios.get(
+        `${baseURL}/leetResource/${matchedProblem.problemId}`,
+        {
+          headers: {
+            "x-api-key": apiKey,
+          },
+        }
+      );
+
+      const solution = res.data;
+
+      //将solution加入matchedProblem
+      const solutionContent = {
+        ...matchedProblem,
+        content: solution.solutionMarkdown,
+      };
+
+      // all good, add to the selected problem list
+      setSelectedProblems((prev) => [...prev, solutionContent]);
+    } catch (error) {
+      console.error("Failed to fetch problem content:", error);
+    }
+  };
+
   return (
     <div>
       <div className="container mt-5">
@@ -64,8 +124,7 @@ function GithubData() {
       </div>
 
       <div className="comparison-dropdown">
-        {/* <select onChange={handleSelectProblem}> */}
-        <select>
+        <select onChange={handleClickProblem}>
           <option value="">Select a problem</option>
 
           {/* make sure the "displayed" must be an array */}
@@ -75,6 +134,24 @@ function GithubData() {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className="posts-container">
+        {selectedProblems.map((postContent) => (
+          // 回调函数这里要用圆括号或者在大括号中显式地 return 内容
+          <div className="post" key={postContent.problemId}>
+            <h4>
+              <b>Solution {postContent.title}</b>
+            </h4>
+            <pre>{postContent.solutionMarkdown}</pre>
+            {/* <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {typeof postContent.content === "string"
+                ? postContent.content
+                : JSON.stringify(postContent.content)}
+            </ReactMarkdown> 
+            */}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -27,7 +27,12 @@ export async function handler(event) {
 
       return {
         statusCode: 200,
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "http://localhost:5173",
+          "Access-Control-Allow-Headers": "Content-Type,x-api-key",
+          "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        },
         body: JSON.stringify(result.Item || {}), //turn the result.Item (as an object) to JSON
       };
     } catch (err) {
