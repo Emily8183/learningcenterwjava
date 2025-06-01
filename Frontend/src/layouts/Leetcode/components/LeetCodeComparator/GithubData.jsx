@@ -8,7 +8,7 @@ import axios from "axios";
 
 //const GithubData = () => {}
 function GithubData() {
-  const [displayed, setDisplayed] = useState([]);
+  const [displayed, setDisplayed] = useState([]); //TODO: change the function name; display the problem list
   const [selectedProblems, setSelectedProblems] = useState([]);
   //   const [content, setContent] = useState("");
   const [searchNumber, setSearchNumber] = useState("");
@@ -37,6 +37,8 @@ function GithubData() {
           title: problem.title,
         }));
 
+        // console.log(titles); <= make sure the problemIds are unique
+
         setDisplayed(titles);
         setLoading(false);
         setError(null);
@@ -55,7 +57,7 @@ function GithubData() {
 
   //handle clicking on the selected prob
   const handleClickProblem = async (event) => {
-    const selectedTitle = event.target.value;
+    const selectedTitle = event.target.value; //TODO: searching by Id is better
 
     if (selectedProblems.length >= 4) {
       alert("Maximum is 4");
@@ -75,20 +77,24 @@ function GithubData() {
     }
 
     // if duplicated
-    const isDuplicate = selectedProblems.some(
-      (problem) => problem.problemId === matchedProblem.problemId
-    );
+    const isDuplicate = selectedProblems.some((problem) => {
+      console.log(problem);
+      return problem.id === matchedProblem.id;
+    });
 
     if (isDuplicate) {
       alert("This post already exists.");
       return;
     }
 
+    console.log(matchedProblem);
+    console.log(selectedProblems);
+
     try {
       const baseURL = apiUrl;
 
       const res = await axios.get(
-        `${baseURL}/leetResource/${matchedProblem.problemId}`,
+        `${baseURL}/leetResource/${matchedProblem.id}`,
         {
           headers: {
             "x-api-key": apiKey,
@@ -103,6 +109,8 @@ function GithubData() {
         ...matchedProblem,
         content: solution.solutionMarkdown,
       };
+
+      console.log(solutionContent);
 
       // all good, add to the selected problem list
       setSelectedProblems((prev) => [...prev, solutionContent]);
@@ -129,6 +137,7 @@ function GithubData() {
 
           {/* make sure the "displayed" must be an array */}
           {displayed.map((postContent) => (
+            // <option key={postContent.problemId} value={postContent.title}>
             <option key={postContent.id} value={postContent.title}>
               {postContent.title}
             </option>
@@ -139,11 +148,12 @@ function GithubData() {
       <div className="posts-container">
         {selectedProblems.map((postContent) => (
           // 回调函数这里要用圆括号或者在大括号中显式地 return 内容
-          <div className="post" key={postContent.problemId}>
+          //   <div className="post" key={postContent.problemId}>
+          <div className="post" key={postContent.id}>
             <h4>
-              <b>Solution {postContent.title}</b>
+              <b>Solution: {postContent.title}</b>
             </h4>
-            <pre>{postContent.solutionMarkdown}</pre>
+            <pre>{postContent.content}</pre>
             {/* <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {typeof postContent.content === "string"
                 ? postContent.content
