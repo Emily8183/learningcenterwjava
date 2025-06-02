@@ -29,7 +29,8 @@ export async function handler(event) {
         statusCode: 200,
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "http://localhost:5173",
+          // "Access-Control-Allow-Origin": "http://localhost:5173",
+          "Access-Control-Allow-Origin": "https://emily.brajk.me/",
           "Access-Control-Allow-Headers": "Content-Type,x-api-key",
           "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         },
@@ -60,7 +61,8 @@ export async function handler(event) {
         statusCode: 200,
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "http://localhost:5173",
+          // "Access-Control-Allow-Origin": "http://localhost:5173",
+          "Access-Control-Allow-Origin": "https://emily.brajk.me/",
           "Access-Control-Allow-Headers": "Content-Type,x-api-key",
           "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         },
