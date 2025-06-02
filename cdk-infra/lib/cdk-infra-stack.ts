@@ -48,8 +48,8 @@ export class CdkInfraStack extends cdk.Stack {
       restApiName: "leetcompareAPI",
       defaultCorsPreflightOptions: {
         //only works for OPTIONS, need to set in Lambda function too
-        // allowOrigins: ["http://localhost:5173", "https://emily.brajk.me"],
-        allowOrigins: apigateway.Cors.ALL_ORIGINS, // CDK中设置CORS（属于API Gateway层）
+        allowOrigins: ["http://localhost:5173", "https://emily.brajk.me"],
+        // allowOrigins: apigateway.Cors.ALL_ORIGINS, // CDK中设置CORS（属于API Gateway层）
         allowMethods: apigateway.Cors.ALL_METHODS,
         allowHeaders: ["Content-Type", "x-api-key"],
       },

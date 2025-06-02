@@ -30,8 +30,8 @@ export async function handler(event) {
         headers: {
           "Content-Type": "application/json",
           // "Access-Control-Allow-Origin": "http://localhost:5173",
-          // "Access-Control-Allow-Origin": "https://emily.brajk.me",
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "https://emily.brajk.me",
+          // "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "Content-Type,x-api-key",
           "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         },
@@ -63,8 +63,8 @@ export async function handler(event) {
         headers: {
           "Content-Type": "application/json",
           // "Access-Control-Allow-Origin": "http://localhost:5173",
-          // "Access-Control-Allow-Origin": "https://emily.brajk.me",
-          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Origin": "https://emily.brajk.me",
+          // "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "Content-Type,x-api-key",
           "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
         },
