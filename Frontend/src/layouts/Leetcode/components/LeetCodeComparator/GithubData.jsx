@@ -114,6 +114,29 @@ function GithubData() {
     }
   };
 
+  const handleClearSelection = () => {
+    setSelectedProblems([]);
+  };
+
+  useEffect(() => {
+    console.log("loading:", loading);
+    console.log("error:", error);
+  }, [loading, error]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
+
+  if (!selectedProblems) {
+    return (
+      <div className="container mt-5">
+        <p>
+          Sorry this site is still in the progress. You will have a better
+          version soon!
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="container mt-5">
@@ -124,19 +147,23 @@ function GithubData() {
           differences. <br />
           You can choose up to <b>4 problems</b> to compare.
         </p>
-      </div>
 
-      <div className="comparison-dropdown">
-        <select onChange={handleClickProblem}>
-          <option value="">Select a problem</option>
+        <div className="comparison-dropdown">
+          <select onChange={handleClickProblem}>
+            <option value="">Select a problem</option>
 
-          {/* make sure the "listDisplayed" must be an array */}
-          {listDisplayed.map((postContent) => (
-            <option key={postContent.id} value={postContent.title}>
-              {postContent.title}
-            </option>
-          ))}
-        </select>
+            {/* make sure the "listDisplayed" must be an array */}
+            {listDisplayed.map((postContent) => (
+              <option key={postContent.id} value={postContent.title}>
+                {postContent.title}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <button onClick={handleClearSelection}>Clear All Selections</button>
+        </div>
       </div>
 
       <div className="posts-container">
@@ -145,7 +172,7 @@ function GithubData() {
           //   <div className="post" key={postContent.problemId}>
           <div className="post" key={postContent.id}>
             <h4>
-              <b>solution: {postContent.title}</b>
+              <b>Solution: {postContent.title}</b>
             </h4>
             {/* <pre>{postContent.content}</pre> */}
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
