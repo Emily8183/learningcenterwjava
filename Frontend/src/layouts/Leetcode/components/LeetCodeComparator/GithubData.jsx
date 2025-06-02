@@ -8,7 +8,7 @@ import axios from "axios";
 
 //const GithubData = () => {}
 function GithubData() {
-  const [displayed, setDisplayed] = useState([]); //TODO: change the function name; display the problem list
+  const [listDisplayed, setListDisplayed] = useState([]); //TODO: change the function name; display the problem list
   const [selectedProblems, setSelectedProblems] = useState([]);
   //   const [content, setContent] = useState("");
   const [searchNumber, setSearchNumber] = useState("");
@@ -39,7 +39,7 @@ function GithubData() {
 
         // console.log(titles); <= make sure the problemIds are unique
 
-        setDisplayed(titles);
+        setListDisplayed(titles);
         setLoading(false);
         setError(null);
       } catch (error) {
@@ -64,7 +64,7 @@ function GithubData() {
       return;
     }
 
-    const matchedProblem = displayed.find(
+    const matchedProblem = listDisplayed.find(
       (content) => content.title === selectedTitle
     );
 
@@ -135,8 +135,8 @@ function GithubData() {
         <select onChange={handleClickProblem}>
           <option value="">Select a problem</option>
 
-          {/* make sure the "displayed" must be an array */}
-          {displayed.map((postContent) => (
+          {/* make sure the "listDisplayed" must be an array */}
+          {listDisplayed.map((postContent) => (
             // <option key={postContent.problemId} value={postContent.title}>
             <option key={postContent.id} value={postContent.title}>
               {postContent.title}
@@ -158,8 +158,7 @@ function GithubData() {
               {typeof postContent.content === "string"
                 ? postContent.content
                 : JSON.stringify(postContent.content)}
-            </ReactMarkdown> 
-            */}
+            </ReactMarkdown> */}
           </div>
         ))}
       </div>
