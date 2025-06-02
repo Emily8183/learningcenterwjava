@@ -10,8 +10,6 @@ import axios from "axios";
 function GithubData() {
   const [listDisplayed, setListDisplayed] = useState([]);
   const [selectedProblems, setSelectedProblems] = useState([]);
-  //   const [content, setContent] = useState("");
-  const [searchNumber, setSearchNumber] = useState("");
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
@@ -28,6 +26,7 @@ function GithubData() {
         const res = await axios.get(`${baseURL}/leetResource`, {
           headers: {
             "x-api-key": apiKey,
+            "Content-Type": "application/json",
           },
         });
         const problems = res.data;
