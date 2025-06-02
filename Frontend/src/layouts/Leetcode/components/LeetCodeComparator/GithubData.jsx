@@ -8,7 +8,7 @@ import axios from "axios";
 
 //const GithubData = () => {}
 function GithubData() {
-  const [listDisplayed, setListDisplayed] = useState([]); //TODO: change the function name; display the problem list
+  const [listDisplayed, setListDisplayed] = useState([]);
   const [selectedProblems, setSelectedProblems] = useState([]);
   //   const [content, setContent] = useState("");
   const [searchNumber, setSearchNumber] = useState("");
@@ -64,11 +64,10 @@ function GithubData() {
       return;
     }
 
+    //look for the selected poblem in the list
     const matchedProblem = listDisplayed.find(
       (content) => content.title === selectedTitle
     );
-
-    // console.log("matchedProblem:", matchedProblem); <= Test result: works well
 
     //if the title on the list but not in the table anymore
     if (!matchedProblem) {
@@ -78,7 +77,6 @@ function GithubData() {
 
     // if duplicated
     const isDuplicate = selectedProblems.some((problem) => {
-      console.log(problem);
       return problem.id === matchedProblem.id;
     });
 
@@ -86,9 +84,6 @@ function GithubData() {
       alert("This post already exists.");
       return;
     }
-
-    console.log(matchedProblem);
-    console.log(selectedProblems);
 
     try {
       const baseURL = apiUrl;
@@ -102,18 +97,18 @@ function GithubData() {
         }
       );
 
-      const solution = res.data;
+      const solutionData = res.data;
 
-      //将solution加入matchedProblem
-      const solutionContent = {
+      //将solutionData加入matchedProblem
+      const solutionDataContent = {
         ...matchedProblem,
-        content: solution.solutionMarkdown,
+        content: solutionData.solutionMarkdown,
       };
 
-      console.log(solutionContent);
+      console.log(solutionDataContent);
 
       // all good, add to the selected problem list
-      setSelectedProblems((prev) => [...prev, solutionContent]);
+      setSelectedProblems((prev) => [...prev, solutionDataContent]);
     } catch (error) {
       console.error("Failed to fetch problem content:", error);
     }
@@ -137,7 +132,6 @@ function GithubData() {
 
           {/* make sure the "listDisplayed" must be an array */}
           {listDisplayed.map((postContent) => (
-            // <option key={postContent.problemId} value={postContent.title}>
             <option key={postContent.id} value={postContent.title}>
               {postContent.title}
             </option>
@@ -151,14 +145,14 @@ function GithubData() {
           //   <div className="post" key={postContent.problemId}>
           <div className="post" key={postContent.id}>
             <h4>
-              <b>Solution: {postContent.title}</b>
+              <b>solution: {postContent.title}</b>
             </h4>
-            <pre>{postContent.content}</pre>
-            {/* <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {/* <pre>{postContent.content}</pre> */}
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {typeof postContent.content === "string"
                 ? postContent.content
                 : JSON.stringify(postContent.content)}
-            </ReactMarkdown> */}
+            </ReactMarkdown>
           </div>
         ))}
       </div>
