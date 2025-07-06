@@ -31,3 +31,6 @@ Thumbs.db
 # Security: do not commit AWS credentials
 .aws/
 .credentials
+*.pem
+*.key
+*.crt
