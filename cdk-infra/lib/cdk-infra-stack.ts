@@ -34,7 +34,7 @@ export class CdkInfraStack extends cdk.Stack {
     //lambda
     const leetcompareLambda = new lambda.Function(this, "LeetCompareLambda", {
       handler: "leetcompare_Lambda.handler",
-      runtime: lambda.Runtime.NODEJS_20_X,
+      runtime: lambda.Runtime.NODEJS_22_X,
       code: lambda.Code.fromAsset("./services/"),
       functionName: "lambdaFetchTable",
       role: leetcompareiamrole,

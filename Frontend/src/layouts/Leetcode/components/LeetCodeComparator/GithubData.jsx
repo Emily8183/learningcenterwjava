@@ -5,8 +5,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 // import { useParams } from "react-router";
 import axios from "axios";
-
-//const GithubData = () => {}
 function GithubData() {
   const [listDisplayed, setListDisplayed] = useState([]);
   const [selectedProblems, setSelectedProblems] = useState([]);
@@ -167,13 +165,10 @@ function GithubData() {
 
       <div className="posts-container">
         {selectedProblems.map((postContent) => (
-          // 回调函数这里要用圆括号或者在大括号中显式地 return 内容
-          //   <div className="post" key={postContent.problemId}>
           <div className="post" key={postContent.id}>
             <h4>
               <b>Solution: {postContent.title}</b>
             </h4>
-            {/* <pre>{postContent.content}</pre> */}
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {typeof postContent.content === "string"
                 ? postContent.content
